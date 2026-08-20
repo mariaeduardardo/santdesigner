@@ -119,12 +119,16 @@
   .btn-brush::before {
     content: '';
     position: absolute;
-    inset: -5px -20px;
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 40px);
+    height: calc(100% + 20px);
+    transform: translate(-50%, -50%);
     background-image: var(--brush-url);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: -1;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .btn-brush:hover {
@@ -132,7 +136,7 @@
   }
 
   .btn-brush:hover::before {
-    transform: scale(1.02);
+    transform: translate(-50%, -50%) scale(1.02);
   }
   
   .bg-grid {
