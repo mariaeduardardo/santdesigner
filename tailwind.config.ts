@@ -16,8 +16,6 @@ export default {
       fontFamily: {
         sans: ["Plus Jakarta Sans", "sans-serif"],
         display: ["Dela Gothic One", "cursive"],
-        underground: ["Permanent Marker", "cursive"],
-        tag: ["Rock Salt", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",

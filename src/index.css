@@ -97,29 +97,8 @@
     text-shadow: 0 0 20px rgba(255, 183, 3, 0.4);
   }
   
-  .text-glow-orange {
-    text-shadow: 0 0 10px rgba(251, 86, 7, 0.8), 0 0 20px rgba(251, 86, 7, 0.4);
-    -webkit-text-stroke: 1px rgba(251, 86, 7, 0.5);
-  }
-
-  .concrete-texture {
-    background-color: #0a0a0a;
-    background-image: 
-      url("https://www.transparenttextures.com/patterns/carbon-fibre.png"),
-      radial-gradient(circle at 20% 30%, rgba(251, 86, 7, 0.15) 0%, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(255, 183, 3, 0.1) 0%, transparent 40%);
-    background-blend-mode: overlay;
-  }
-
-  .stencil-button {
-    position: relative;
-    border: 2px dashed rgba(251, 86, 7, 0.4);
-    background-image: linear-gradient(45deg, rgba(251, 86, 7, 0.1) 25%, transparent 25%, transparent 50%, rgba(251, 86, 7, 0.1) 50%, rgba(251, 86, 7, 0.1) 75%, transparent 75%, transparent);
-    background-size: 4px 4px;
-  }
-
   .glass {
-    @apply bg-black/60 backdrop-blur-xl border border-white/5;
+    @apply bg-black/40 backdrop-blur-xl border border-white/5;
   }
 
   .neon-border {

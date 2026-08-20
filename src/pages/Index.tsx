@@ -74,24 +74,22 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden concrete-texture">
-        {/* Graffiti Tags Overlays */}
-        <div className="absolute top-20 left-10 text-white/5 font-tag text-4xl -rotate-12 pointer-events-none select-none">SANT</div>
-        <div className="absolute bottom-40 right-20 text-white/5 font-tag text-6xl rotate-12 pointer-events-none select-none">UNDERGROUND</div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/5 font-tag text-9xl opacity-10 pointer-events-none select-none">STREET ART</div>
-
-        <div className="container mx-auto px-6 relative z-10">
+      <section id="hero" className="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
+        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-[#FFB703]/20 rounded-full blur-[120px] -z-10 animate-pulse" />
+        <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FB5607]/10 rounded-full blur-[120px] -z-10 animate-pulse" />
+        
+        <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-left space-y-8 animate-fade-up">
-              <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[1.0] uppercase text-white font-underground text-left text-glow-orange">
-                IDENTIDADE <span className="text-primary italic">VISUAL</span> PARA <br />
+              <h1 className="text-4xl md:text-6xl font-black tracking-normal leading-[1.1] uppercase text-white font-display text-left">
+                IDENTIDADE <span className="text-primary text-glow italic">VISUAL</span> PARA <br />
                 EVENTOS E ARTISTAS
               </h1>
-              <p className="text-lg md:text-xl text-zinc-400 max-w-2xl text-left leading-relaxed font-medium">
+              <p className="text-lg md:text-xl text-white/60 max-w-2xl text-left leading-relaxed">
                 Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-6">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-16 px-10 rounded-xl text-lg shadow-[0_0_30px_rgba(255,183,3,0.2)] transition-all hover:scale-105 stencil-button">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold h-16 px-10 rounded-full text-lg shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105">
                   Iniciar Projeto <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
