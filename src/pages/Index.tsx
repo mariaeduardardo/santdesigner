@@ -1,9 +1,12 @@
-import { ArrowRight, Star, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Star, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VideoBackground from "@/components/VideoBackground";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 
 const Index = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative">
       {/* Background Video */}
@@ -33,14 +36,30 @@ const Index = () => {
             <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-bold h-9 px-4 rounded-full text-xs shadow-lg">
               Orçamento
             </Button>
-            <button className="text-white p-1">
-              <div className="w-6 h-0.5 bg-white mb-1.5 rounded-full"></div>
-              <div className="w-6 h-0.5 bg-white mb-1.5 rounded-full"></div>
-              <div className="w-4 h-0.5 bg-white ml-auto rounded-full"></div>
+            <button 
+              className="text-white p-2 z-[60] relative"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        <div className={`fixed inset-0 bg-black/95 z-[55] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+          <div className="flex flex-col items-center gap-8 text-lg font-black text-white italic uppercase tracking-[0.2em]">
+            <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">SERVIÇOS</a>
+            <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PORTFÓLIO</a>
+            <a href="#processo" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PROCESSO</a>
+            <a href="#faq" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">FAQ</a>
+            <Button variant="secondary" onClick={() => setIsMenuOpen(false)} className="bg-white hover:bg-white/90 text-black font-bold px-10 py-6 rounded-full text-lg mt-4">
+              Solicitar Orçamento
+            </Button>
+          </div>
+        </div>
       </nav>
+
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
