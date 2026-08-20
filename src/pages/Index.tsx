@@ -83,14 +83,14 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-12 md:h-14 px-8 md:px-10 rounded-full text-sm md:text-base shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-11 md:h-12 px-6 md:px-8 rounded-full text-xs md:text-sm shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
                   Solicitar Orçamento <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float w-full max-w-sm lg:max-w-md flex justify-center lg:justify-end">
-              <div className="relative w-full aspect-[4/5] flex items-center justify-center p-4">
+            <div className="flex-1 relative animate-float w-full max-w-[280px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end">
+              <div className="relative w-full aspect-[4/5] flex items-center justify-center p-2 sm:p-4">
                 <div className="relative w-4/5 h-full">
                   {[art2Asset, art1Asset].map((asset, index) => {
                     const isActive = activeCardIndex === index;
