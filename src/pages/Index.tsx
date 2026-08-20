@@ -66,8 +66,8 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-[70vh] flex items-center pt-20 pb-10 px-6 overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] -z-10 animate-pulse" />
-        <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] -z-10 animate-pulse" />
+        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-white/0 rounded-full blur-[120px] -z-10 animate-pulse" />
+        <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-white/0 rounded-full blur-[120px] -z-10 animate-pulse" />,new_content_2:
         
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
@@ -116,7 +116,7 @@ const Index = () => {
                   })}
                 </div>
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-white/5 rounded-full blur-[100px] -z-10" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-white/0 rounded-full blur-[100px] -z-10" />
             </div>
           </div>
         </div>
