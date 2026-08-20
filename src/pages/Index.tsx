@@ -5,20 +5,10 @@ import VideoBackground from "@/components/VideoBackground";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 import art1Asset from "@/assets/art1.jpg.asset.json";
 import art2Asset from "@/assets/art2.jpg.asset.json";
-import useEmblaCarousel from 'embla-carousel-react';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative">
