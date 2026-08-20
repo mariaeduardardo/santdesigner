@@ -65,15 +65,15 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-[90vh] flex items-center pt-24 pb-12 px-6 overflow-hidden">
+      <section id="hero" className="relative min-h-[70vh] flex items-center pt-20 pb-10 px-6 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-[#FFB703]/20 rounded-full blur-[120px] -z-10 animate-pulse" />
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FB5607]/10 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="flex-1 text-left space-y-6 animate-fade-up max-w-3xl">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-normal leading-[1.0] uppercase text-white font-display text-left">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
+            <div className="flex-1 text-left space-y-4 animate-fade-up max-w-3xl">
+              <div className="space-y-3">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-normal leading-[1.0] uppercase text-white font-display text-left">
                   comunicação <br />
                   <span className="text-primary text-glow italic">visual</span> PARA <br />
                   EVENTOS E ARTISTAS
