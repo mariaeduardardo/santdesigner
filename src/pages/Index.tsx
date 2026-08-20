@@ -79,18 +79,22 @@ const Index = () => {
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FB5607]/10 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex-1 text-left space-y-8 animate-fade-up">
-              <h1 className="text-5xl md:text-8xl font-black tracking-normal leading-[1.0] uppercase text-white font-display text-left">
-                comunicação <span className="text-primary text-glow italic">visual</span> PARA <br />
-                EVENTOS E ARTISTAS
-              </h1>
-              <p className="text-lg md:text-xl text-white/60 max-w-2xl text-left leading-relaxed">
-                Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
-              </p>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+            <div className="flex-1 text-left space-y-6 md:space-y-10 animate-fade-up">
+              <div className="space-y-4 md:space-y-6">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] uppercase text-white font-display text-left">
+                  comunicação <br />
+                  <span className="text-primary text-glow italic">visual</span> PARA <br />
+                  EVENTOS E <br />
+                  ARTISTAS
+                </h1>
+                <p className="text-base md:text-lg text-white/60 max-w-xl text-left leading-relaxed font-medium">
+                  Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-6">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold h-16 px-10 rounded-full text-lg shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105">
-                  Iniciar Projeto <ArrowRight className="ml-2 w-5 h-5" />
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-14 md:h-16 px-8 md:px-12 rounded-full text-base md:text-lg shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
+                  Solicitar Orçamento <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
             </div>
