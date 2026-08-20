@@ -169,11 +169,11 @@ const Index = () => {
       </section>
 
       {/* Results */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="glass p-16 rounded-[4rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-16 border-white/5">
-            <div className="space-y-8 text-center md:text-left">
-              <h3 className="text-6xl md:text-7xl font-black tracking-tighter leading-none text-white italic uppercase">
+          <div className="glass p-8 md:p-16 rounded-[2rem] md:rounded-[4rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 border-white/5">
+            <div className="space-y-6 md:space-y-8 text-center md:text-left">
+              <h3 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white italic uppercase">
                 +3 MILHÕES <br />
                 <span className="text-white/30 text-3xl font-bold tracking-widest uppercase not-italic">De streams totais</span>
               </h3>
