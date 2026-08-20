@@ -17,7 +17,7 @@ const Index = () => {
       <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-20" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
+      <nav className="fixed top-0 w-full z-50 glass">
         <div className="container mx-auto px-4 md:px-6 py-2 md:py-3 flex items-center justify-between">
           <div className="flex items-center">
             <img src={logoAsset.url} alt="Sant Designer Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
@@ -123,7 +123,7 @@ const Index = () => {
       </section>
 
       {/* Expertise */}
-      <section id="servicos" className="py-20 md:py-32 px-6 relative bg-secondary/5">
+      <section id="servicos" className="py-20 md:py-32 px-6 relative">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-20">
             <div className="space-y-3">
@@ -212,7 +212,7 @@ const Index = () => {
             </Button>
           </div>
 
-          <div className="flex items-center justify-center gap-12 pt-16 border-t border-white/5">
+          <div className="flex items-center justify-center gap-12 pt-16">
             <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
               <Instagram className="w-4 h-4" /> Instagram
             </a>
