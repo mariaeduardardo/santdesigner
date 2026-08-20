@@ -14,7 +14,7 @@ const Index = () => {
     <div className="min-h-screen selection:bg-primary selection:text-white relative">
       {/* Background */}
       <Background />
-      <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-20" />
+      <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-10" />
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass">
