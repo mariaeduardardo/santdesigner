@@ -24,9 +24,11 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] -z-10" />
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-[90vh] flex items-center">
+        <div className="absolute top-0 left-0 w-full h-full bg-grid -z-10" />
+        <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse" />
+        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] -z-10 animate-pulse" />
+        
         
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
