@@ -183,12 +183,12 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 gap-12 text-center md:text-right">
               <div>
-                <div className="text-6xl font-black text-primary italic">50+</div>
-                <div className="text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-4">Artistas Atendidos</div>
+                <div className="text-4xl md:text-6xl font-black text-primary italic">50+</div>
+                <div className="text-[10px] md:text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-2 md:mt-4">Artistas Atendidos</div>
               </div>
               <div>
-                <div className="text-6xl font-black text-white italic">200+</div>
-                <div className="text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-4">Projetos Entregues</div>
+                <div className="text-4xl md:text-6xl font-black text-white italic">200+</div>
+                <div className="text-[10px] md:text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-2 md:mt-4">Projetos Entregues</div>
               </div>
             </div>
           </div>
