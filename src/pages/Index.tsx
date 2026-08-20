@@ -1,11 +1,23 @@
-import { useState } from "react";
-import { ArrowRight, Star, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X } from "lucide-react";
+import { useState, useCallback } from "react";
+import { ArrowRight, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VideoBackground from "@/components/VideoBackground";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
+import art1Asset from "@/assets/art1.jpg.asset.json";
+import art2Asset from "@/assets/art2.jpg.asset.json";
+import useEmblaCarousel from 'embla-carousel-react';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative">
@@ -83,13 +95,35 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float">
-              <div className="relative z-10 w-full aspect-square max-w-md mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition-all duration-700 bg-zinc-900 group">
-                <img 
-                  src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop" 
-                  alt="Cover Art Example" 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                />
+            <div className="flex-1 relative animate-float w-full max-w-md mx-auto">
+              <div className="relative z-10 w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-zinc-900 group">
+                <div className="embla" ref={emblaRef}>
+                  <div className="embla__container flex">
+                    {[art1Asset, art2Asset].map((asset, index) => (
+                      <div key={index} className="embla__slide flex-[0_0_100%] min-w-0">
+                        <img 
+                          src={asset.url} 
+                          alt={`Art ${index + 1}`} 
+                          className="w-full aspect-[3/4] object-cover transition-all duration-700"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Navigation Arrows */}
+                <button 
+                  onClick={scrollPrev}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button 
+                  onClick={scrollNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
               </div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-primary/10 rounded-full blur-[100px] -z-10" />
             </div>
