@@ -1,12 +1,12 @@
 import { ArrowRight, Star, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import FireworksBackground from "@/components/FireworksBackground";
 
 const Index = () => {
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative">
       {/* Background Texture & Effects */}
-      <div className="fixed inset-0 pointer-events-none -z-20 bg-[#0a0a0a]" />
-      <div className="fixed inset-0 pointer-events-none -z-20 opacity-40" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")' }} />
+      <FireworksBackground />
       <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-20" />
       
       {/* Navigation */}
