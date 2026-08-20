@@ -98,7 +98,7 @@ const Index = () => {
                       <div 
                         key={index} 
                         onClick={() => setActiveCardIndex(index)}
-                        className={`absolute inset-0 w-full h-full rounded-2xl border border-white/10 shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-700 cursor-pointer ${isActive ? 'z-30 scale-100 rotate-0 translate-x-0 -translate-y-8' : 'z-10 scale-90'}`}
+                        className={`absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-700 cursor-pointer ${isActive ? 'z-30 scale-100 rotate-0 translate-x-0 -translate-y-8' : 'z-10 scale-90'}`}
                         style={{
                           transform: !isActive ? `rotate(${index === 0 ? '-12deg' : '12deg'}) translateX(${index === 0 ? '-25%' : '25%'})` : undefined,
                         }}
