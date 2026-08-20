@@ -1,12 +1,12 @@
 import { ArrowRight, Star, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import FireworksBackground from "@/components/FireworksBackground";
+import VideoBackground from "@/components/VideoBackground";
 
 const Index = () => {
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative">
-      {/* Background Texture & Effects */}
-      <FireworksBackground />
+      {/* Background Video */}
+      <VideoBackground />
       <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-20" />
       
       {/* Navigation */}
