@@ -1,6 +1,7 @@
 import { ArrowRight, Star, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VideoBackground from "@/components/VideoBackground";
+import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 
 const Index = () => {
   return (
