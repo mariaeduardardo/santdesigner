@@ -1,6 +1,7 @@
 import { ArrowRight, Star, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VideoBackground from "@/components/VideoBackground";
+import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
+            <img src={logoAsset.url} alt="Sant Designer Logo" className="w-10 h-10 object-contain" />
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-bold text-white/70">
             <a href="#servicos" className="hover:text-primary transition-colors tracking-widest uppercase">SERVIÇOS</a>
@@ -174,7 +176,9 @@ const Index = () => {
           </div>
           
           <div className="pt-20">
-            <div className="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center font-black text-2xl text-white mx-auto mb-8 rotate-12 hover:rotate-0 transition-transform cursor-pointer">SD</div>
+            <div className="w-20 h-20 mx-auto mb-8 hover:scale-110 transition-transform cursor-pointer">
+              <img src={logoAsset.url} alt="Sant Designer Logo" className="w-full h-full object-contain" />
+            </div>
             <p className="text-[10px] text-white/20 font-bold tracking-[0.5em] uppercase">
               © 2024 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
             </p>
