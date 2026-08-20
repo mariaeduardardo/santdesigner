@@ -12,9 +12,9 @@ const Index = () => {
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
-        <div className="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 md:px-6 py-2 md:py-3 flex items-center justify-between">
           <div className="flex items-center">
-            <img src={logoAsset.url} alt="Sant Designer Logo" className="w-14 h-14 md:w-20 md:h-20 object-contain" />
+            <img src={logoAsset.url} alt="Sant Designer Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
           </div>
           
           {/* Desktop Menu */}
