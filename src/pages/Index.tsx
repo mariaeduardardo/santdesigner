@@ -89,9 +89,9 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float w-full max-w-[240px] sm:max-w-[320px] lg:max-w-[380px] flex justify-center lg:justify-end">
+            <div className="flex-1 relative animate-float w-full max-w-[280px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-2 sm:p-4">
-                <div className="relative w-[70%] h-full">
+                <div className="relative w-4/5 h-full">
                   {[art2Asset, art1Asset].map((asset, index) => {
                     const isActive = activeCardIndex === index;
                     return (
