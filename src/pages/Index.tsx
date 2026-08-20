@@ -80,15 +80,6 @@ const Index = () => {
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold h-16 px-10 rounded-full text-lg shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105">
                   Iniciar Projeto <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <div className="flex -space-x-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full border-2 border-[#0a0a0a] bg-zinc-800" />
-                  ))}
-                  <div className="pl-6 flex flex-col items-start justify-center">
-                    <div className="flex text-yellow-500"><Star className="w-3 h-3 fill-current" /><Star className="w-3 h-3 fill-current" /><Star className="w-3 h-3 fill-current" /><Star className="w-3 h-3 fill-current" /><Star className="w-3 h-3 fill-current" /></div>
-                    <span className="text-[10px] font-bold text-white/40 tracking-widest uppercase">+3M de streams</span>
-                  </div>
-                </div>
               </div>
             </div>
             
