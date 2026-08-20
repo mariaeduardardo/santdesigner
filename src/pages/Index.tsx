@@ -196,7 +196,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-gradient-to-b from-transparent to-[#0a0a0a]">
+      <section id="contact" className="py-32 bg-transparent">
         <div className="container mx-auto px-6 text-center space-y-16">
           <div className="space-y-4">
             <h2 className="text-sm font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
