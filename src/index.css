@@ -6,13 +6,13 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 240 10% 4%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 240 10% 4%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 240 10% 4%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 263.4 70% 50.4%;
@@ -34,7 +34,7 @@
     --input: 240 3.7% 15.9%;
     --ring: 263.4 70% 50.4%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -44,11 +44,10 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#0a0a0a] text-foreground;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-image: 
-      radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
-    background-size: 40px 40px;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    background-attachment: fixed;
   }
 
   html {
@@ -62,10 +61,17 @@
   }
   
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-black/40 backdrop-blur-xl border border-white/5;
   }
 
   .neon-border {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+  
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
   }
 }
