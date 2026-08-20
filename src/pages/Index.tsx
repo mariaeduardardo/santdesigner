@@ -82,7 +82,7 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
             <div className="flex-1 text-left space-y-6 md:space-y-10 animate-fade-up">
               <div className="space-y-4 md:space-y-6">
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] uppercase text-white font-display text-left">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-normal leading-[0.9] uppercase text-white font-display text-left">
                   comunicação <br />
                   <span className="text-primary text-glow italic">visual</span> PARA <br />
                   EVENTOS E <br />
