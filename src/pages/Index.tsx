@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import VideoBackground from "@/components/VideoBackground";
+import Background from "@/components/Background";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 import art1Asset from "@/assets/art1.jpg.asset.json";
 import art2Asset from "@/assets/art2.jpg.asset.json";
@@ -12,8 +12,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative">
-      {/* Background Video */}
-      <VideoBackground />
+      {/* Background */}
+      <Background />
       <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-20" />
       
       {/* Navigation */}
