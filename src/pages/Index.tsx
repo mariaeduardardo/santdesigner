@@ -1,5 +1,5 @@
-import { useState, useCallback } from "react";
-import { ArrowRight, Music, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VideoBackground from "@/components/VideoBackground";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
