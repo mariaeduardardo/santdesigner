@@ -5,8 +5,6 @@ import VideoBackground from "@/components/VideoBackground";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 import art1Asset from "@/assets/art1.jpg.asset.json";
 import art2Asset from "@/assets/art2.jpg.asset.json";
-import brushAsset from "@/assets/button-brush.avif.asset.json";
-
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,22 +29,16 @@ const Index = () => {
             <a href="#portfolio" className="hover:text-primary transition-colors tracking-widest uppercase">PORTFÓLIO</a>
             <a href="#processo" className="hover:text-primary transition-colors tracking-widest uppercase">PROCESSO</a>
             <a href="#faq" className="hover:text-primary transition-colors tracking-widest uppercase">FAQ</a>
-            <button 
-              className="btn-brush px-10 py-2 text-sm md:text-base"
-              style={{ "--brush-url": `url(${brushAsset.url})` } as React.CSSProperties}
-            >
+            <Button variant="secondary" className="bg-white hover:bg-white/90 text-black font-bold px-8 rounded-full transition-all hover:scale-105">
               Solicitar Orçamento
-            </button>
+            </Button>
           </div>
 
           {/* Mobile Actions */}
           <div className="flex md:hidden items-center gap-3">
-            <button 
-              className="btn-brush px-6 py-1.5 text-[10px]"
-              style={{ "--brush-url": `url(${brushAsset.url})` } as React.CSSProperties}
-            >
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-bold h-9 px-4 rounded-full text-xs shadow-lg">
               Orçamento
-            </button>
+            </Button>
             <button 
               className="text-white p-2 z-[60] relative"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -64,13 +56,9 @@ const Index = () => {
             <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PORTFÓLIO</a>
             <a href="#processo" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PROCESSO</a>
             <a href="#faq" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">FAQ</a>
-            <button 
-              onClick={() => setIsMenuOpen(false)} 
-              className="btn-brush px-12 py-3 text-lg mt-4"
-              style={{ "--brush-url": `url(${brushAsset.url})` } as React.CSSProperties}
-            >
+            <Button variant="secondary" onClick={() => setIsMenuOpen(false)} className="bg-white hover:bg-white/90 text-black font-bold px-10 py-6 rounded-full text-lg mt-4">
               Solicitar Orçamento
-            </button>
+            </Button>
           </div>
         </div>
       </nav>
@@ -95,12 +83,9 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <button 
-                  className="btn-brush px-12 py-3 text-base md:text-lg"
-                  style={{ "--brush-url": `url(${brushAsset.url})` } as React.CSSProperties}
-                >
-                  Solicitar Orçamento <ArrowRight className="ml-2 w-5 h-5 inline" />
-                </button>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-12 md:h-14 px-8 md:px-10 rounded-full text-sm md:text-base shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
+                  Solicitar Orçamento <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
               </div>
             </div>
             

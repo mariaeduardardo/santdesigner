@@ -101,42 +101,8 @@
     @apply bg-black/40 backdrop-blur-xl border border-white/5;
   }
 
-  .btn-brush {
-    position: relative;
-    background: transparent;
-    border: none;
-    color: black;
-    font-weight: 900;
-    transition: all 0.3s ease;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    font-family: 'Anton', sans-serif;
-  }
-
-  .btn-brush::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: calc(100% + 40px);
-    height: calc(100% + 20px);
-    transform: translate(-50%, -50%);
-    background-image: var(--brush-url);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    z-index: -1;
-    transition: all 0.3s ease;
-  }
-
-  .btn-brush:hover {
-    transform: scale(1.05);
-  }
-
-  .btn-brush:hover::before {
-    transform: translate(-50%, -50%) scale(1.02);
+  .neon-border {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.1);
   }
   
   .bg-grid {
