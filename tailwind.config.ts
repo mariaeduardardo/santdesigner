@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Plus Jakarta Sans", "sans-serif"],
+        display: ["Dela Gothic One", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
