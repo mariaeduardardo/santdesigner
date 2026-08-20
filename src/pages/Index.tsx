@@ -9,6 +9,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const scrollPrev = useCallback(() => {
