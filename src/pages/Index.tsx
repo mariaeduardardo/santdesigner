@@ -30,7 +30,7 @@ const Index = () => {
         
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex-1 text-center lg:text-left space-y-8 animate-fade-up">
+            <div className="flex-1 text-left space-y-8 animate-fade-up">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
                 <Music className="w-3 h-3" /> Creative Music Studio
               </div>
