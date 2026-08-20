@@ -13,8 +13,8 @@ const Index = () => {
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center font-bold text-xl text-white">YG</div>
-            <span className="font-bold text-xl tracking-tight hidden sm:block">YAS GRAPHICS</span>
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center font-bold text-xl text-white">SD</div>
+            <span className="font-bold text-xl tracking-tight hidden sm:block">SANT DESIGNER</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-bold text-white/70">
             <a href="#servicos" className="hover:text-primary transition-colors tracking-widest uppercase">SERVIÇOS</a>
@@ -179,9 +179,9 @@ const Index = () => {
           </div>
           
           <div className="pt-20">
-            <div className="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center font-black text-2xl text-white mx-auto mb-8 rotate-12 hover:rotate-0 transition-transform cursor-pointer">YG</div>
+            <div className="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center font-black text-2xl text-white mx-auto mb-8 rotate-12 hover:rotate-0 transition-transform cursor-pointer">SD</div>
             <p className="text-[10px] text-white/20 font-bold tracking-[0.5em] uppercase">
-              © 2024 YAS GRAPHICS. TODOS OS DIREITOS RESERVADOS.
+              © 2024 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
             </p>
           </div>
         </div>
