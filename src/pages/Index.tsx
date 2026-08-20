@@ -62,15 +62,15 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center pt-28 md:pt-32 px-6 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-[#FFB703]/20 rounded-full blur-[120px] -z-10 animate-pulse" />
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FB5607]/10 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-left space-y-8 animate-fade-up">
-              <h1 className="text-5xl md:text-8xl font-normal tracking-tight leading-[0.9] uppercase text-white font-display text-left break-words">
-                IDENTIDADE <span className="text-primary text-glow italic">VISUAL</span> PARA <br className="hidden md:block" />
+              <h1 className="text-4xl md:text-6xl font-black tracking-normal leading-[1.1] uppercase text-white font-display text-left">
+                IDENTIDADE <span className="text-primary text-glow italic">VISUAL</span> PARA <br />
                 EVENTOS E ARTISTAS
               </h1>
               <p className="text-lg md:text-xl text-white/60 max-w-2xl text-left leading-relaxed">
