@@ -73,12 +73,12 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
             <div className="flex-1 text-left space-y-4 animate-fade-up max-w-3xl">
               <div className="space-y-3">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-normal leading-[1.0] uppercase text-white font-display text-left">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-normal leading-[1.0] uppercase text-white font-display text-left">
                   comunicação <br />
                   <span className="text-primary text-glow italic">visual</span> PARA <br />
                   EVENTOS E ARTISTAS
                 </h1>
-                <p className="text-sm md:text-base text-white/60 max-w-lg text-left leading-relaxed font-medium">
+                <p className="text-base md:text-lg text-white/60 max-w-xl text-left leading-relaxed font-medium">
                   Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
                 </p>
               </div>
