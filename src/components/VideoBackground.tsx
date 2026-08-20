@@ -9,11 +9,13 @@ const VideoBackground = () => {
         loop
         muted
         playsInline
-        className="w-full h-full object-cover opacity-60"
+        preload="auto"
+        className="w-full h-full object-cover opacity-60 transition-opacity duration-1000"
+        poster="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=20&w=20&auto=format&fit=crop"
       >
         <source src={backgroundVideo.url} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#0a0a0a]/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#0a0a0a]" />
     </div>
   );
 };
