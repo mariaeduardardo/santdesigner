@@ -39,7 +39,7 @@ const Index = () => {
                 EVENTOS E ARTISTAS
               </h1>
               <p className="text-lg md:text-xl text-white/60 max-w-2xl text-left leading-relaxed">
-                Da capa à divulgação, criamos uma identidade visual completa para apresentar sua música com mais profissionalismo e impacto no mercado.
+                Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-6">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold h-16 px-10 rounded-full text-lg shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all hover:scale-105">
