@@ -28,8 +28,8 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse" />
-        <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] -z-10 animate-pulse" />
+        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-[#FFB703]/20 rounded-full blur-[120px] -z-10 animate-pulse" />
+        <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FB5607]/10 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -42,7 +42,7 @@ const Index = () => {
                 Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-6">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold h-16 px-10 rounded-full text-lg shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all hover:scale-105">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold h-16 px-10 rounded-full text-lg shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105">
                   Iniciar Projeto <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <div className="flex -space-x-3">
@@ -151,7 +151,7 @@ const Index = () => {
             <h2 className="text-sm font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
             <h3 className="text-5xl md:text-8xl font-black tracking-tighter text-white italic uppercase">
               SEU PRÓXIMO <br />
-              <span className="text-primary text-glow">PROJETO AQUI</span>
+              <span className="text-[#D90429] text-glow">PROJETO AQUI</span>
             </h3>
           </div>
           
