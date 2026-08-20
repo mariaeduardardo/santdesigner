@@ -98,35 +98,26 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float w-full max-w-sm lg:max-w-md">
-              <div className="relative z-10 w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-zinc-900 group">
-                <div className="embla" ref={emblaRef}>
-                  <div className="embla__container flex">
-                    {[art1Asset, art2Asset].map((asset, index) => (
-                      <div key={index} className="embla__slide flex-[0_0_100%] min-w-0">
-                        <img 
-                          src={asset.url} 
-                          alt={`Art ${index + 1}`} 
-                          className="w-full aspect-[3/4] object-cover transition-all duration-700"
-                        />
-                      </div>
-                    ))}
-                  </div>
+            <div className="flex-1 relative animate-float w-full max-w-sm lg:max-w-md flex justify-center lg:justify-end">
+              <div className="relative w-full aspect-[4/5] flex items-center justify-center p-4">
+                <div className="relative w-4/5 h-full">
+                  {[art2Asset, art1Asset].map((asset, index) => (
+                    <div 
+                      key={index} 
+                      className={`absolute inset-0 w-full h-full rounded-2xl border border-white/10 shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-500 hover:z-30 hover:scale-105 hover:-translate-y-4`}
+                      style={{
+                        transform: `rotate(${index === 0 ? '-6deg' : '6deg'}) translateX(${index === 0 ? '-15%' : '15%'})`,
+                        zIndex: index === 0 ? 10 : 20
+                      }}
+                    >
+                      <img 
+                        src={asset.url} 
+                        alt={`Art ${index + 1}`} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
                 </div>
-                
-                {/* Navigation Arrows */}
-                <button 
-                  onClick={scrollPrev}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button 
-                  onClick={scrollNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
               </div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-primary/10 rounded-full blur-[100px] -z-10" />
             </div>
