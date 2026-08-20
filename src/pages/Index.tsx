@@ -65,15 +65,15 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-[90vh] flex items-center pt-24 pb-12 px-6 overflow-hidden">
+      <section id="hero" className="relative min-h-[70vh] flex items-center pt-20 pb-10 px-6 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-[#FFB703]/20 rounded-full blur-[120px] -z-10 animate-pulse" />
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FB5607]/10 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="flex-1 text-left space-y-6 animate-fade-up max-w-3xl">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-normal leading-[1.0] uppercase text-white font-display text-left">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
+            <div className="flex-1 text-left space-y-4 animate-fade-up max-w-3xl">
+              <div className="space-y-3">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-normal leading-[1.0] uppercase text-white font-display text-left">
                   comunicação <br />
                   <span className="text-primary text-glow italic">visual</span> PARA <br />
                   EVENTOS E ARTISTAS
@@ -83,14 +83,14 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-12 md:h-14 px-8 md:px-10 rounded-full text-sm md:text-base shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-11 md:h-12 px-6 md:px-8 rounded-full text-xs md:text-sm shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
                   Solicitar Orçamento <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float w-full max-w-sm lg:max-w-md flex justify-center lg:justify-end">
-              <div className="relative w-full aspect-[4/5] flex items-center justify-center p-4">
+            <div className="flex-1 relative animate-float w-full max-w-[280px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end">
+              <div className="relative w-full aspect-[4/5] flex items-center justify-center p-2 sm:p-4">
                 <div className="relative w-4/5 h-full">
                   {[art2Asset, art1Asset].map((asset, index) => {
                     const isActive = activeCardIndex === index;
@@ -123,12 +123,12 @@ const Index = () => {
       </section>
 
       {/* Expertise */}
-      <section id="servicos" className="py-32 px-6 relative bg-secondary/5">
+      <section id="servicos" className="py-20 md:py-32 px-6 relative bg-secondary/5">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-            <div className="space-y-4">
-              <h2 className="text-sm font-bold tracking-[0.3em] text-primary uppercase">Expertise</h2>
-              <h3 className="text-5xl md:text-6xl font-black tracking-tighter text-white uppercase italic">Nossas Soluções</h3>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-20">
+            <div className="space-y-3">
+              <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Expertise</h2>
+              <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic">Nossas Soluções</h3>
             </div>
             <p className="text-white/40 max-w-sm text-left md:text-right leading-relaxed font-medium uppercase text-xs tracking-widest">
               Desenvolvemos toda a estética do seu lançamento para garantir o máximo de engajamento em todas as plataformas.
@@ -153,11 +153,11 @@ const Index = () => {
                 desc: "Desenvolvemos a identidade visual completa do seu lançamento para gerar expectativa e engajamento."
               }
             ].map((service, idx) => (
-              <div key={idx} className="glass p-10 rounded-[2rem] group hover:bg-white/5 transition-all duration-500 border-white/5">
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
-                  <service.icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
+              <div key={idx} className="glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500 border-white/5">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary transition-colors">
+                  <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
                 </div>
-                <h4 className="text-2xl font-black mb-4 text-white uppercase italic">{service.title}</h4>
+                <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic">{service.title}</h4>
                 <p className="text-white/50 mb-8 leading-relaxed font-medium">{service.desc}</p>
                 <a href="#" className="inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em]">
                   DETALHES <ArrowRight className="w-4 h-4" />
@@ -169,11 +169,11 @@ const Index = () => {
       </section>
 
       {/* Results */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="glass p-16 rounded-[4rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-16 border-white/5">
-            <div className="space-y-8 text-center md:text-left">
-              <h3 className="text-6xl md:text-7xl font-black tracking-tighter leading-none text-white italic uppercase">
+          <div className="glass p-8 md:p-16 rounded-[2rem] md:rounded-[4rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 border-white/5">
+            <div className="space-y-6 md:space-y-8 text-center md:text-left">
+              <h3 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white italic uppercase">
                 +3 MILHÕES <br />
                 <span className="text-white/30 text-3xl font-bold tracking-widest uppercase not-italic">De streams totais</span>
               </h3>
@@ -183,12 +183,12 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 gap-12 text-center md:text-right">
               <div>
-                <div className="text-6xl font-black text-primary italic">50+</div>
-                <div className="text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-4">Artistas Atendidos</div>
+                <div className="text-4xl md:text-6xl font-black text-primary italic">50+</div>
+                <div className="text-[10px] md:text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-2 md:mt-4">Artistas Atendidos</div>
               </div>
               <div>
-                <div className="text-6xl font-black text-white italic">200+</div>
-                <div className="text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-4">Projetos Entregues</div>
+                <div className="text-4xl md:text-6xl font-black text-white italic">200+</div>
+                <div className="text-[10px] md:text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-2 md:mt-4">Projetos Entregues</div>
               </div>
             </div>
           </div>
@@ -196,19 +196,19 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-transparent">
-        <div className="container mx-auto px-6 text-center space-y-16">
-          <div className="space-y-4">
-            <h2 className="text-sm font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
-            <h3 className="text-5xl md:text-8xl font-black tracking-tighter text-white italic uppercase">
+      <section id="contact" className="py-20 md:py-32 bg-transparent">
+        <div className="container mx-auto px-6 text-center space-y-12 md:space-y-16">
+          <div className="space-y-3 md:space-y-4">
+            <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
+            <h3 className="text-4xl md:text-8xl font-black tracking-tighter text-white italic uppercase">
               SEU PRÓXIMO <br />
               <span className="text-[#D90429] text-glow">PROJETO AQUI</span>
             </h3>
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-20 px-16 rounded-full text-xl group transition-all hover:scale-105 shadow-2xl">
-              FALAR NO WHATSAPP <MessageCircle className="ml-4 w-6 h-6" />
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-16 md:h-20 px-10 md:px-16 rounded-full text-lg md:text-xl group transition-all hover:scale-105 shadow-2xl">
+              FALAR NO WHATSAPP <MessageCircle className="ml-4 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
 
