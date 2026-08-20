@@ -14,7 +14,7 @@ const Index = () => {
     <div className="min-h-screen selection:bg-primary selection:text-white relative">
       {/* Background */}
       <Background />
-      <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-20" />
+      <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-10" />
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass">
@@ -67,7 +67,7 @@ const Index = () => {
       {/* Hero Section */}
       <section id="hero" className="relative min-h-[70vh] flex items-center pt-20 pb-10 px-6 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] -z-10 animate-pulse" />
-        <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FB5607]/10 rounded-full blur-[120px] -z-10 animate-pulse" />
+        <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
@@ -98,7 +98,7 @@ const Index = () => {
                       <div 
                         key={index} 
                         onClick={() => setActiveCardIndex(index)}
-                        className={`absolute inset-0 w-full h-full rounded-2xl border border-white/10 shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-700 cursor-pointer ${isActive ? 'z-30 scale-100 rotate-0 translate-x-0 -translate-y-8' : 'z-10 scale-90'}`}
+                        className={`absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-700 cursor-pointer ${isActive ? 'z-30 scale-100 rotate-0 translate-x-0 -translate-y-8' : 'z-10 scale-90'}`}
                         style={{
                           transform: !isActive ? `rotate(${index === 0 ? '-12deg' : '12deg'}) translateX(${index === 0 ? '-25%' : '25%'})` : undefined,
                         }}
@@ -153,7 +153,7 @@ const Index = () => {
                 desc: "Desenvolvemos a identidade visual completa do seu lançamento para gerar expectativa e engajamento."
               }
             ].map((service, idx) => (
-              <div key={idx} className="glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500 border-white/5">
+              <div key={idx} className="glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary transition-colors">
                   <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
                 </div>
@@ -171,7 +171,7 @@ const Index = () => {
       {/* Results */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="glass p-8 md:p-16 rounded-[2rem] md:rounded-[4rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 border-white/5">
+          <div className="glass p-8 md:p-16 rounded-[2rem] md:rounded-[4rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
             <div className="space-y-6 md:space-y-8 text-center md:text-left">
               <h3 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white italic uppercase">
                 +3 MILHÕES <br />
