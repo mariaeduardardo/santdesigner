@@ -153,11 +153,11 @@ const Index = () => {
                 desc: "Desenvolvemos a identidade visual completa do seu lançamento para gerar expectativa e engajamento."
               }
             ].map((service, idx) => (
-              <div key={idx} className="glass p-10 rounded-[2rem] group hover:bg-white/5 transition-all duration-500 border-white/5">
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
-                  <service.icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
+              <div key={idx} className="glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500 border-white/5">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary transition-colors">
+                  <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
                 </div>
-                <h4 className="text-2xl font-black mb-4 text-white uppercase italic">{service.title}</h4>
+                <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic">{service.title}</h4>
                 <p className="text-white/50 mb-8 leading-relaxed font-medium">{service.desc}</p>
                 <a href="#" className="inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em]">
                   DETALHES <ArrowRight className="w-4 h-4" />
