@@ -98,7 +98,7 @@
   }
   
   .glass {
-    @apply bg-black/40 backdrop-blur-xl border border-white/5;
+    @apply bg-black/40 backdrop-blur-xl;
   }
 
   .neon-border {
