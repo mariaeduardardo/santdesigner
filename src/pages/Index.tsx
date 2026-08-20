@@ -12,10 +12,12 @@ const Index = () => {
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img src={logoAsset.url} alt="Sant Designer Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
+        <div className="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+          <div className="flex items-center">
+            <img src={logoAsset.url} alt="Sant Designer Logo" className="w-14 h-14 md:w-20 md:h-20 object-contain" />
           </div>
+          
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8 text-sm font-bold text-white/70">
             <a href="#servicos" className="hover:text-primary transition-colors tracking-widest uppercase">SERVIÇOS</a>
             <a href="#portfolio" className="hover:text-primary transition-colors tracking-widest uppercase">PORTFÓLIO</a>
@@ -24,6 +26,18 @@ const Index = () => {
             <Button variant="secondary" className="bg-white hover:bg-white/90 text-black font-bold px-8 rounded-full transition-all hover:scale-105">
               Solicitar Orçamento
             </Button>
+          </div>
+
+          {/* Mobile Actions */}
+          <div className="flex md:hidden items-center gap-3">
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-bold h-9 px-4 rounded-full text-xs shadow-lg">
+              Orçamento
+            </Button>
+            <button className="text-white p-1">
+              <div className="w-6 h-0.5 bg-white mb-1.5 rounded-full"></div>
+              <div className="w-6 h-0.5 bg-white mb-1.5 rounded-full"></div>
+              <div className="w-4 h-0.5 bg-white ml-auto rounded-full"></div>
+            </button>
           </div>
         </div>
       </nav>
