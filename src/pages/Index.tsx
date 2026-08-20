@@ -41,10 +41,10 @@ const Index = () => {
                   <span className="absolute -bottom-2 left-0 w-full h-2 bg-primary/30 -skew-x-12" />
                 </span> MUSICAIS
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl text-left">
                 Da capa à divulgação, criamos uma identidade visual completa para apresentar sua música com mais profissionalismo.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
                 <Button size="lg" className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold h-14 px-10 rounded-full text-lg shadow-[0_0_30px_rgba(34,211,238,0.2)]">
                   Iniciar Projeto
                 </Button>
