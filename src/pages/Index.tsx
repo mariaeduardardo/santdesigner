@@ -62,7 +62,7 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center pt-32 md:pt-40 px-6 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center pt-28 md:pt-32 px-6 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-[#FFB703]/20 rounded-full blur-[120px] -z-10 animate-pulse" />
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FB5607]/10 rounded-full blur-[120px] -z-10 animate-pulse" />
         
