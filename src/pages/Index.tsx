@@ -196,11 +196,11 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-transparent">
-        <div className="container mx-auto px-6 text-center space-y-16">
-          <div className="space-y-4">
-            <h2 className="text-sm font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
-            <h3 className="text-5xl md:text-8xl font-black tracking-tighter text-white italic uppercase">
+      <section id="contact" className="py-20 md:py-32 bg-transparent">
+        <div className="container mx-auto px-6 text-center space-y-12 md:space-y-16">
+          <div className="space-y-3 md:space-y-4">
+            <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
+            <h3 className="text-4xl md:text-8xl font-black tracking-tighter text-white italic uppercase">
               SEU PRÓXIMO <br />
               <span className="text-[#D90429] text-glow">PROJETO AQUI</span>
             </h3>
