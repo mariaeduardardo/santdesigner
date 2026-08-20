@@ -207,8 +207,8 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-20 px-16 rounded-full text-xl group transition-all hover:scale-105 shadow-2xl">
-              FALAR NO WHATSAPP <MessageCircle className="ml-4 w-6 h-6" />
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-16 md:h-20 px-10 md:px-16 rounded-full text-lg md:text-xl group transition-all hover:scale-105 shadow-2xl">
+              FALAR NO WHATSAPP <MessageCircle className="ml-4 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
 
