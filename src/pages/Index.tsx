@@ -55,9 +55,6 @@ const Index = () => {
             <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PORTFÓLIO</a>
             <a href="#processo" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PROCESSO</a>
             <a href="#faq" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">FAQ</a>
-            <Button variant="secondary" onClick={() => setIsMenuOpen(false)} className="bg-white hover:bg-white/90 text-black font-bold px-10 py-6 rounded-full text-lg mt-4">
-              Solicitar Orçamento
-            </Button>
           </div>
         </div>
       </nav>
