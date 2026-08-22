@@ -14,10 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Special Elite", "system-ui", "sans-serif"],
-        display: ["Rubik Glitch", "cursive"],
-        underground: ["Special Elite", "cursive"],
-        stencil: ["Bangers", "cursive"],
+        sans: ["Plus Jakarta Sans", "sans-serif"],
+        display: ["Anton", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

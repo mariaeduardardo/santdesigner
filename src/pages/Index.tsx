@@ -29,7 +29,7 @@ const Index = () => {
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-bold text-white/70 font-underground">
+          <div className="hidden md:flex items-center gap-8 text-sm font-bold text-white/70">
             <a href="#servicos" className="hover:text-primary transition-colors tracking-widest uppercase">SERVIÇOS</a>
             <a href="#portfolio" className="hover:text-primary transition-colors tracking-widest uppercase">PORTFÓLIO</a>
             <a href="#processo" className="hover:text-primary transition-colors tracking-widest uppercase">PROCESSO</a>
@@ -50,7 +50,7 @@ const Index = () => {
 
         {/* Mobile Menu Overlay */}
         <div className={`fixed inset-0 bg-black/95 z-[55] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-          <div className="flex flex-col items-center gap-8 text-lg font-black text-white italic uppercase tracking-[0.2em] font-underground">
+          <div className="flex flex-col items-center gap-8 text-lg font-black text-white italic uppercase tracking-[0.2em]">
             <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">SERVIÇOS</a>
             <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PORTFÓLIO</a>
             <a href="#processo" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PROCESSO</a>
@@ -82,7 +82,7 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-11 md:h-12 px-6 md:px-8 rounded-full text-xs md:text-sm shadow-[0_0_30px_rgba(255,0,0,0.3)] transition-all hover:scale-105 uppercase tracking-wider font-underground">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-11 md:h-12 px-6 md:px-8 rounded-full text-xs md:text-sm shadow-[0_0_30px_rgba(255,0,0,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
                   Solicitar Orçamento <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
@@ -206,7 +206,7 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-16 md:h-20 px-10 md:px-16 rounded-full text-lg md:text-xl group transition-all hover:scale-105 shadow-2xl font-underground">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-16 md:h-20 px-10 md:px-16 rounded-full text-lg md:text-xl group transition-all hover:scale-105 shadow-2xl">
               FALAR NO WHATSAPP <MessageCircle className="ml-4 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
