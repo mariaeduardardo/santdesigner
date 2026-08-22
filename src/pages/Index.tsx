@@ -140,19 +140,19 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "COVER ART",
+                title: "IDENTIDADE VISUAL & PÔSTERS",
                 icon: ImageIcon,
-                desc: "Criação de capas para singles, EPs e álbuns que capturam a essência do seu som instantaneamente."
+                desc: "Criação de flyers, cartazes de rua e identidades visuais pesadas que traduzem a energia do seu som e dos seus eventos para a pista."
               },
               {
-                title: "VISUALIZERS",
+                title: "ILUSTRAÇÃO AUTORAL",
                 icon: Video,
-                desc: "Vídeos dinâmicos e Lyric Videos estilizados para engajamento em plataformas de streaming e social."
+                desc: "Traços exclusivos e ilustrações com atitude de rua para camisas, capas, cartazes e projetos que exigem identidade única."
               },
               {
-                title: "CAMPANHA",
+                title: "SOUND SYSTEM & EVENTOS",
                 icon: Layout,
-                desc: "Desenvolvemos a identidade visual completa do seu lançamento para gerar expectativa e engajamento."
+                desc: "Direção de arte e projetos gráficos completos para festas, coletivos e sound systems que querem dominar a cena com respeito e peso."
               }
             ].map((service, idx) => (
               <div key={idx} className="glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500">
