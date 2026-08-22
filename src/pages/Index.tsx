@@ -115,7 +115,7 @@ const Index = () => {
                   })}
                 </div>
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-white/0 rounded-full blur-[100px] -z-10" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-primary/5 rounded-full blur-[100px] -z-10" />
             </div>
           </div>
         </div>
@@ -158,8 +158,8 @@ const Index = () => {
                 </div>
                 <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic">{service.title}</h4>
                 <p className="text-white/50 mb-8 leading-relaxed font-medium">{service.desc}</p>
-                <a href="#" className="inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em]">
-                  DETALHES <ArrowRight className="w-4 h-4" />
+                <a href="#contact" className="inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em]">
+                  ORÇAMENTO <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             ))}
