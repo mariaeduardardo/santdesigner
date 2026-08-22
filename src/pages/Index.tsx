@@ -174,32 +174,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Results */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="glass p-8 md:p-16 rounded-[2rem] md:rounded-[4rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
-            <div className="space-y-6 md:space-y-8 text-center md:text-left">
-              <h3 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white italic uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
-                +3 MILHÕES <br />
-                <span className="text-white/30 text-3xl font-bold tracking-widest uppercase not-italic">De streams totais</span>
-              </h3>
-              <p className="text-white/50 max-w-md text-lg font-medium leading-relaxed">
-                Resultados reais através de design estratégico. O visual é a primeira conexão entre o artista e o público.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-12 text-center md:text-right">
-              <div>
-                <div className="text-4xl md:text-6xl font-black text-primary italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>50+</div>
-                <div className="text-[10px] md:text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-2 md:mt-4">Artistas Atendidos</div>
-              </div>
-              <div>
-                <div className="text-4xl md:text-6xl font-black text-white italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>200+</div>
-                <div className="text-[10px] md:text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-2 md:mt-4">Projetos Entregues</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 md:py-32 bg-transparent">
