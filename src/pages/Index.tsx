@@ -52,12 +52,12 @@ const Index = () => {
         </div>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-black/95 z-[55] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-          <div className="flex flex-col items-center gap-8 text-lg font-black text-white italic uppercase tracking-[0.2em]">
-            <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">SERVIÇOS</a>
-            <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PORTFÓLIO</a>
-            <a href="#processo" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PROCESSO</a>
-            <a href="#faq" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">FAQ</a>
+        <div className={`fixed inset-0 bg-black/98 z-[55] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 overflow-y-auto ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+          <div className="flex flex-col items-center gap-8 text-2xl font-black text-white italic uppercase tracking-[0.2em] px-4 text-center">
+            <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors py-2">SERVIÇOS</a>
+            <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors py-2">PORTFÓLIO</a>
+            <a href="#processo" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors py-2">PROCESSO</a>
+            <a href="#faq" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors py-2">FAQ</a>
           </div>
         </div>
       </nav>
@@ -91,7 +91,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float w-full max-w-[320px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <div className="flex-1 relative animate-float w-full max-w-[280px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end mt-8 lg:mt-0 mx-auto lg:mx-0">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-0 sm:p-4">
                 <div className="relative w-4/5 h-full">
                   {[turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset].map((asset, index) => {
