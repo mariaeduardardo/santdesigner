@@ -69,9 +69,12 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
             <div className="flex-1 text-left space-y-4 animate-fade-up max-w-3xl">
               <div className="space-y-3">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-normal leading-[1.0] uppercase text-white font-display text-left">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-[0.9] uppercase text-white font-display text-left">
                   comunicação <br />
-                  <span className="text-primary text-glow italic">visual</span> PARA <br />
+                  <span className="text-primary text-glow italic relative inline-block">
+                    visual
+                    <div className="absolute -bottom-2 -right-4 w-full h-2 bg-primary/30 blur-sm -rotate-2 -z-10" />
+                  </span> PARA <br />
                   EVENTOS E ARTISTAS
                 </h1>
                 <p className="text-base md:text-lg text-white/60 max-w-xl text-left leading-relaxed font-medium">
@@ -112,7 +115,7 @@ const Index = () => {
                   })}
                 </div>
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-white/0 rounded-full blur-[100px] -z-10" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-primary/5 rounded-full blur-[100px] -z-10" />
             </div>
           </div>
         </div>
@@ -155,8 +158,8 @@ const Index = () => {
                 </div>
                 <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic">{service.title}</h4>
                 <p className="text-white/50 mb-8 leading-relaxed font-medium">{service.desc}</p>
-                <a href="#" className="inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em]">
-                  DETALHES <ArrowRight className="w-4 h-4" />
+                <a href="#contact" className="inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em]">
+                  ORÇAMENTO <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             ))}
