@@ -140,7 +140,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "IDENTIDADE VISUAL & PÔSTERS",
+                title: "COMUNICAÇÃO VISUAL & PÔSTERS",
                 icon: ImageIcon,
                 desc: "Criação de flyers, cartazes de rua e identidades visuais pesadas que traduzem a energia do seu som e dos seus eventos para a pista."
               },
