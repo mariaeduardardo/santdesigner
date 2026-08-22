@@ -16,10 +16,13 @@ const Index = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
 
   return (
-    <div className="min-h-screen selection:bg-primary selection:text-white relative">
+    <div className="min-h-screen selection:bg-primary selection:text-white relative bg-black">
+      {/* Noise Overlay */}
+      <div className="noise-overlay" />
+      
       {/* Background */}
       <Background />
-      <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-10" />
+      <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-5" />
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass">
