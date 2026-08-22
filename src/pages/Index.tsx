@@ -155,14 +155,18 @@ const Index = () => {
                 desc: "Direção de arte e projetos gráficos completos para festas, coletivos e sound systems que querem dominar a cena com respeito e peso."
               }
             ].map((service, idx) => (
-              <div key={idx} className="glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary transition-colors">
+              <div key={idx} className="glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500 relative overflow-hidden flex flex-col items-start text-left border border-white/5 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(255,0,0,0.15)]">
+                {/* Interactive background glow */}
+                <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-[60px] group-hover:bg-primary/40 transition-all duration-700 pointer-events-none" />
+                
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                   <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
                 </div>
-                <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>{service.title}</h4>
-                <p className="text-white/50 mb-8 leading-relaxed font-medium">{service.desc}</p>
-                <a href="#contact" className="inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em]">
-                  ORÇAMENTO <ArrowRight className="w-4 h-4" />
+                <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic group-hover:text-primary transition-colors duration-300" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>{service.title}</h4>
+                <p className="text-white/50 mb-8 leading-relaxed font-medium group-hover:text-white/80 transition-colors duration-300">{service.desc}</p>
+                <a href="#contact" className="mt-auto inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em] relative">
+                  ORÇAMENTO <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-300" />
                 </a>
               </div>
             ))}
