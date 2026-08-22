@@ -32,11 +32,11 @@ const Index = () => {
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-bold text-white/70">
-            <a href="#servicos" className="hover:text-primary transition-colors tracking-widest uppercase">SERVIÇOS</a>
-            <a href="#portfolio" className="hover:text-primary transition-colors tracking-widest uppercase">PORTFÓLIO</a>
-            <a href="#processo" className="hover:text-primary transition-colors tracking-widest uppercase">PROCESSO</a>
-            <a href="#faq" className="hover:text-primary transition-colors tracking-widest uppercase">FAQ</a>
+          <div className="hidden md:flex items-center gap-12 text-sm font-black text-white/90">
+            <a href="#servicos" className="hover:text-primary transition-all tracking-[0.2em] uppercase hover:scale-110">SERVIÇOS</a>
+            <a href="#portfolio" className="hover:text-primary transition-all tracking-[0.2em] uppercase hover:scale-110">PORTFÓLIO</a>
+            <a href="#processo" className="hover:text-primary transition-all tracking-[0.2em] uppercase hover:scale-110">PROCESSO</a>
+            <a href="#faq" className="hover:text-primary transition-all tracking-[0.2em] uppercase hover:scale-110">FAQ</a>
           </div>
 
           {/* Mobile Actions */}
@@ -64,15 +64,15 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-[70vh] flex items-center pt-32 pb-10 px-6 overflow-hidden">
+      <section id="hero" className="relative min-h-[90vh] md:min-h-[70vh] flex items-center pt-24 md:pt-32 pb-10 px-4 md:px-6 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-white/0 rounded-full blur-[120px] -z-10 animate-pulse" />
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-white/0 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
-            <div className="flex-1 text-left space-y-4 animate-fade-up max-w-3xl">
-              <div className="space-y-3">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-[0.9] uppercase text-white font-display text-left" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+            <div className="flex-1 text-left space-y-6 md:space-y-4 animate-fade-up max-w-3xl w-full">
+              <div className="space-y-4 md:space-y-3">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] uppercase text-white font-display text-left" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
                   comunicação <br />
                   <span className="text-primary text-glow italic relative inline-block">
                     visual
@@ -80,19 +80,19 @@ const Index = () => {
                   </span> PARA <br />
                   EVENTOS E ARTISTAS
                 </h1>
-                <p className="text-base md:text-lg text-white/60 max-w-xl text-left leading-relaxed font-medium">
+                <p className="text-lg md:text-lg text-white/80 max-w-xl text-left leading-tight md:leading-relaxed font-medium">
                   Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-11 md:h-12 px-6 md:px-8 rounded-full text-xs md:text-sm shadow-[0_0_30px_rgba(255,0,0,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
-                  Solicitar Orçamento <ArrowRight className="ml-2 w-4 h-4" />
+              <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-2">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-14 md:h-12 w-full sm:w-auto px-8 rounded-full text-sm md:text-sm shadow-[0_0_30px_rgba(255,0,0,0.4)] transition-all hover:scale-105 uppercase tracking-[0.2em]">
+                  Solicitar Orçamento <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float w-full max-w-[280px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end">
-              <div className="relative w-full aspect-[4/5] flex items-center justify-center p-2 sm:p-4">
+            <div className="flex-1 relative animate-float w-full max-w-[320px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end mt-8 lg:mt-0">
+              <div className="relative w-full aspect-[4/5] flex items-center justify-center p-0 sm:p-4">
                 <div className="relative w-4/5 h-full">
                   {[turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset].map((asset, index) => {
                     const isActive = activeCardIndex === index;
@@ -100,7 +100,7 @@ const Index = () => {
                       <div 
                         key={index} 
                         onClick={() => setActiveCardIndex(index)}
-                        className={`absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-700 cursor-pointer ${isActive ? 'z-30 scale-100 rotate-0 translate-x-0 -translate-y-8' : 'z-10 scale-90'}`}
+                        className={`absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-700 cursor-pointer ${isActive ? 'z-30 scale-100 rotate-0 translate-x-0 -translate-y-4 md:-translate-y-8' : 'z-10 scale-90'}`}
                         style={{
                           transform: !isActive ? `rotate(${(index - activeCardIndex) * 8}deg) translateX(${(index - activeCardIndex) * 15}%)` : undefined,
                         }}
