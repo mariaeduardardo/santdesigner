@@ -16,7 +16,7 @@ const Index = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
 
   return (
-    <div className="min-h-screen selection:bg-primary selection:text-white relative bg-black">
+    <div className="min-h-screen selection:bg-primary selection:text-white relative bg-black overflow-x-hidden">
       {/* Noise Overlay */}
       <div className="noise-overlay" />
       
@@ -52,24 +52,24 @@ const Index = () => {
         </div>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-black/95 z-[55] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-          <div className="flex flex-col items-center gap-8 text-lg font-black text-white italic uppercase tracking-[0.2em]">
-            <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">SERVIÇOS</a>
-            <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PORTFÓLIO</a>
-            <a href="#processo" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">PROCESSO</a>
-            <a href="#faq" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors">FAQ</a>
+        <div className={`fixed inset-0 bg-black/98 z-[55] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 overflow-y-auto ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+          <div className="flex flex-col items-center gap-8 text-2xl font-black text-white italic uppercase tracking-[0.2em] px-4 text-center">
+            <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors py-2">SERVIÇOS</a>
+            <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors py-2">PORTFÓLIO</a>
+            <a href="#processo" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors py-2">PROCESSO</a>
+            <a href="#faq" onClick={() => setIsMenuOpen(false)} className="hover:text-primary transition-colors py-2">FAQ</a>
           </div>
         </div>
       </nav>
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-[90vh] md:min-h-[70vh] flex items-center pt-24 md:pt-32 pb-10 px-4 md:px-6 overflow-hidden">
+      <section id="hero" className="relative min-h-[90vh] md:min-h-[70vh] flex items-center pt-24 md:pt-32 pb-16 md:pb-32 px-4 md:px-6 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-white/0 rounded-full blur-[120px] -z-10 animate-pulse" />
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-white/0 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             <div className="flex-1 text-left space-y-6 md:space-y-4 animate-fade-up max-w-3xl w-full">
               <div className="space-y-4 md:space-y-3">
                 <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] uppercase text-white font-display text-left" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
@@ -91,7 +91,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float w-full max-w-[320px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <div className="flex-1 relative animate-float w-full max-w-[280px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end mt-8 lg:mt-0 mx-auto lg:mx-0">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-0 sm:p-4">
                 <div className="relative w-4/5 h-full">
                   {[turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset].map((asset, index) => {
@@ -125,7 +125,7 @@ const Index = () => {
       </section>
 
       {/* Expertise */}
-      <section id="servicos" className="py-20 md:py-32 px-6 relative">
+      <section id="servicos" className="py-16 md:py-32 px-4 md:px-6 relative">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-20">
             <div className="space-y-3">
@@ -137,7 +137,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 title: "COMUNICAÇÃO VISUAL & PÔSTERS",
@@ -177,7 +177,7 @@ const Index = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 md:py-32 bg-transparent">
-        <div className="container mx-auto px-6 text-center space-y-12 md:space-y-16">
+        <div className="container mx-auto px-4 md:px-6 text-center space-y-12 md:space-y-16">
           <div className="space-y-3 md:space-y-4">
             <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
             <h3 className="text-4xl md:text-8xl font-black tracking-tighter text-white italic uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
