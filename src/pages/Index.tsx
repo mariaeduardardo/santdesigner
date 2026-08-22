@@ -207,7 +207,7 @@ const Index = () => {
             <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
             <h3 className="text-4xl md:text-8xl font-black tracking-tighter text-white italic uppercase">
               SEU PRÓXIMO <br />
-              <span className="text-[#D90429] text-glow">PROJETO AQUI</span>
+              <span className="text-primary text-glow">PROJETO AQUI</span>
             </h3>
           </div>
           
