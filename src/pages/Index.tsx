@@ -5,6 +5,13 @@ import Background from "@/components/Background";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 import art1Asset from "@/assets/art1.jpg.asset.json";
 import art2Asset from "@/assets/art2.jpg.asset.json";
+import turmaAsset from "@/assets/turma-do-bairro.jpg.asset.json";
+import boyAsset from "@/assets/boy-bobo.jpg.asset.json";
+import loucuraAsset from "@/assets/ai-que-loucura.jpg.asset.json";
+import quebradaAsset from "@/assets/arquivo-de-quebrada.jpg.asset.json";
+import ghetoAsset from "@/assets/criado-no-gheto.jpg.asset.json";
+import pretaAsset from "@/assets/preta.jpg.asset.json";
+import pazAsset from "@/assets/formula-da-paz.jpg.asset.json";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,7 +99,7 @@ const Index = () => {
             <div className="flex-1 relative animate-float w-full max-w-[280px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-2 sm:p-4">
                 <div className="relative w-4/5 h-full">
-                  {[art2Asset, art1Asset].map((asset, index) => {
+                  {[art2Asset, art1Asset, turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset].map((asset, index) => {
                     const isActive = activeCardIndex === index;
                     return (
                       <div 
@@ -100,7 +107,7 @@ const Index = () => {
                         onClick={() => setActiveCardIndex(index)}
                         className={`absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-700 cursor-pointer ${isActive ? 'z-30 scale-100 rotate-0 translate-x-0 -translate-y-8' : 'z-10 scale-90'}`}
                         style={{
-                          transform: !isActive ? `rotate(${index === 0 ? '-12deg' : '12deg'}) translateX(${index === 0 ? '-25%' : '25%'})` : undefined,
+                          transform: !isActive ? `rotate(${(index - activeCardIndex) * 8}deg) translateX(${(index - activeCardIndex) * 15}%)` : undefined,
                         }}
                       >
                         <img 
