@@ -3,8 +3,6 @@ import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, Send, Message
 import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
-import art1Asset from "@/assets/art1.jpg.asset.json";
-import art2Asset from "@/assets/art2.jpg.asset.json";
 import turmaAsset from "@/assets/turma-do-bairro.jpg.asset.json";
 import boyAsset from "@/assets/boy-bobo.jpg.asset.json";
 import loucuraAsset from "@/assets/ai-que-loucura.jpg.asset.json";
@@ -99,7 +97,7 @@ const Index = () => {
             <div className="flex-1 relative animate-float w-full max-w-[280px] sm:max-w-sm lg:max-w-md flex justify-center lg:justify-end">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-2 sm:p-4">
                 <div className="relative w-4/5 h-full">
-                  {[art2Asset, art1Asset, turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset].map((asset, index) => {
+                  {[turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset].map((asset, index) => {
                     const isActive = activeCardIndex === index;
                     return (
                       <div 
