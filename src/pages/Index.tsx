@@ -192,15 +192,15 @@ const Index = () => {
             </Button>
           </div>
 
-          <div className="flex items-center justify-center gap-12 pt-16">
-            <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
-              <Instagram className="w-4 h-4" /> Instagram
+          <div className="flex flex-row items-center justify-center gap-4 sm:gap-12 pt-16">
+            <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-1 sm:gap-2 font-bold uppercase tracking-widest text-[8px] sm:text-xs">
+              <Instagram className="w-3 h-3 sm:w-4 sm:h-4" /> Instagram
             </a>
-            <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
-              <ImageIcon className="w-4 h-4" /> Behance
+            <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-1 sm:gap-2 font-bold uppercase tracking-widest text-[8px] sm:text-xs">
+              <ImageIcon className="w-3 h-3 sm:w-4 sm:h-4" /> Behance
             </a>
-            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
-              <MessageCircle className="w-4 h-4" /> WhatsApp
+            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors flex items-center gap-1 sm:gap-2 font-bold uppercase tracking-widest text-[8px] sm:text-xs">
+              <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4" /> WhatsApp
             </a>
           </div>
           
