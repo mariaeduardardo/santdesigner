@@ -133,7 +133,7 @@ const Index = () => {
               <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>Nossas Soluções</h3>
             </div>
             <p className="text-white/40 max-w-sm text-left md:text-right leading-relaxed font-medium uppercase text-xs tracking-widest">
-              Desenvolvemos toda a estética do seu lançamento para garantir o máximo de engajamento em todas as plataformas.
+              Construímos a estética visual completa dos seus lançamentos e eventos para fazer sua arte ecoar com força total dentro e fora da pista.
             </p>
           </div>
           
