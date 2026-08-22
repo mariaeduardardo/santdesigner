@@ -199,8 +199,8 @@ const Index = () => {
             <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
               <ImageIcon className="w-4 h-4" /> Behance
             </a>
-            <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
-              <Send className="w-4 h-4" /> Telegram
+            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
+              <MessageCircle className="w-4 h-4" /> WhatsApp
             </a>
           </div>
           
