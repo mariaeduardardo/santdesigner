@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Plus Jakarta Sans", "sans-serif"],
-        display: ["Anton", "sans-serif"],
+        display: ["Bebas Neue", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
