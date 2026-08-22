@@ -209,7 +209,7 @@ const Index = () => {
               <img src={logoAsset.url} alt="Sant Designer Logo" className="w-full h-full object-contain" />
             </div>
             <p className="text-[10px] text-white/20 font-bold tracking-[0.5em] uppercase">
-              © 2024 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
+              © 2026 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
             </p>
           </div>
         </div>
