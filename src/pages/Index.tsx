@@ -127,7 +127,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-20">
             <div className="space-y-3">
               <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Expertise</h2>
-              <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic">Nossas Soluções</h3>
+              <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif' }}>Nossas Soluções</h3>
             </div>
             <p className="text-white/40 max-w-sm text-left md:text-right leading-relaxed font-medium uppercase text-xs tracking-widest">
               Desenvolvemos toda a estética do seu lançamento para garantir o máximo de engajamento em todas as plataformas.
@@ -156,7 +156,7 @@ const Index = () => {
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary transition-colors">
                   <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
                 </div>
-                <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic">{service.title}</h4>
+                <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif' }}>{service.title}</h4>
                 <p className="text-white/50 mb-8 leading-relaxed font-medium">{service.desc}</p>
                 <a href="#contact" className="inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em]">
                   ORÇAMENTO <ArrowRight className="w-4 h-4" />
@@ -172,7 +172,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="glass p-8 md:p-16 rounded-[2rem] md:rounded-[4rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
             <div className="space-y-6 md:space-y-8 text-center md:text-left">
-              <h3 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white italic uppercase">
+              <h3 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white italic uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif' }}>
                 +3 MILHÕES <br />
                 <span className="text-white/30 text-3xl font-bold tracking-widest uppercase not-italic">De streams totais</span>
               </h3>
@@ -182,11 +182,11 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 gap-12 text-center md:text-right">
               <div>
-                <div className="text-4xl md:text-6xl font-black text-primary italic">50+</div>
+                <div className="text-4xl md:text-6xl font-black text-primary italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif' }}>50+</div>
                 <div className="text-[10px] md:text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-2 md:mt-4">Artistas Atendidos</div>
               </div>
               <div>
-                <div className="text-4xl md:text-6xl font-black text-white italic">200+</div>
+                <div className="text-4xl md:text-6xl font-black text-white italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif' }}>200+</div>
                 <div className="text-[10px] md:text-xs font-bold text-white/30 uppercase tracking-[0.3em] mt-2 md:mt-4">Projetos Entregues</div>
               </div>
             </div>
@@ -199,7 +199,7 @@ const Index = () => {
         <div className="container mx-auto px-6 text-center space-y-12 md:space-y-16">
           <div className="space-y-3 md:space-y-4">
             <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
-            <h3 className="text-4xl md:text-8xl font-black tracking-tighter text-white italic uppercase">
+            <h3 className="text-4xl md:text-8xl font-black tracking-tighter text-white italic uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif' }}>
               SEU PRÓXIMO <br />
               <span className="text-primary text-glow">PROJETO AQUI</span>
             </h3>
