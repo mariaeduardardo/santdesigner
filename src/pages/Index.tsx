@@ -129,7 +129,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-20">
             <div className="space-y-3">
-              <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">ARMAS VISUAIS</h2>
+              <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">O QUE FAZEMOS NA CENA</h2>
               <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>PROJETOS & IDENTIDADES</h3>
             </div>
             <p className="text-white/40 max-w-sm text-left md:text-right leading-relaxed font-medium uppercase text-xs tracking-widest">
