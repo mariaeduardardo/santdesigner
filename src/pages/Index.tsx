@@ -34,14 +34,14 @@ const Index = () => {
             <a href="#portfolio" className="hover:text-primary transition-colors tracking-widest uppercase">PORTFÓLIO</a>
             <a href="#processo" className="hover:text-primary transition-colors tracking-widest uppercase">PROCESSO</a>
             <a href="#faq" className="hover:text-primary transition-colors tracking-widest uppercase">FAQ</a>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-10 px-6 rounded-full text-xs shadow-[0_0_20px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-10 px-6 rounded-full text-xs shadow-[0_0_20px_rgba(255,0,0,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
               Solicitar Orçamento
             </Button>
           </div>
 
           {/* Mobile Actions */}
           <div className="flex md:hidden items-center gap-3">
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-black h-9 px-4 rounded-full text-[10px] shadow-[0_0_15px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-black h-9 px-4 rounded-full text-[10px] shadow-[0_0_15px_rgba(255,0,0,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
               Orçamento
             </Button>
             <button 
@@ -88,7 +88,7 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-11 md:h-12 px-6 md:px-8 rounded-full text-xs md:text-sm shadow-[0_0_30px_rgba(255,183,3,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-11 md:h-12 px-6 md:px-8 rounded-full text-xs md:text-sm shadow-[0_0_30px_rgba(255,0,0,0.3)] transition-all hover:scale-105 uppercase tracking-wider">
                   Solicitar Orçamento <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
