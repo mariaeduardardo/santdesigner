@@ -15,10 +15,10 @@
     --popover: 240 10% 4%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 43 100% 50.8%; /* #FFB703 */
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 100% 50%; /* Pure Red #FF0000 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 18 96.8% 50.8%; /* #FB5607 */
+    --secondary: 0 0% 100%; /* White #FFFFFF */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 240 3.7% 15.9%;
@@ -94,7 +94,7 @@
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 20px rgba(255, 183, 3, 0.4);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
   }
   
   .glass {
