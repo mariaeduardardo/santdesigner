@@ -73,15 +73,16 @@ const Index = () => {
             <div className="flex-1 text-left space-y-6 md:space-y-4 animate-fade-up max-w-3xl w-full">
               <div className="space-y-4 md:space-y-3">
                 <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] uppercase text-white font-display text-left" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
-                  comunicação <br />
+                  COMUNICAÇÃO <br />
+                  VISUAL PARA <br />
                   <span className="text-primary text-glow italic relative inline-block">
-                    visual
+                    SOUND SYSTEM
                     <div className="absolute -bottom-2 -right-4 w-full h-2 bg-primary/30 blur-sm -rotate-2 -z-10" />
-                  </span> PARA <br />
-                  EVENTOS E ARTISTAS
+                  </span> <br />
+                  E ARTISTAS
                 </h1>
                 <p className="text-lg md:text-lg text-white/80 max-w-xl text-left leading-tight md:leading-relaxed font-medium">
-                  Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
+                  5 anos transformando a identidade de eventos e artistas. Design gráfico e ilustrações autorais com a força e a atitude da cultura de rua.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-2">
@@ -231,7 +232,7 @@ const Index = () => {
               <img src={logoAsset.url} alt="Sant Designer Logo" className="w-full h-full object-contain" />
             </div>
             <p className="text-[10px] text-white/20 font-bold tracking-[0.5em] uppercase">
-              © 2024 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
+              © 2026 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
             </p>
           </div>
         </div>
