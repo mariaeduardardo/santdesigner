@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
@@ -11,9 +11,41 @@ import ghetoAsset from "@/assets/criado-no-gheto.jpg.asset.json";
 import pretaAsset from "@/assets/preta.jpg.asset.json";
 import pazAsset from "@/assets/formula-da-paz.jpg.asset.json";
 
+const cards = [turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset];
+
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+
+  const nextCard = () => setActiveCardIndex((prev) => (prev + 1) % cards.length);
+  const prevCard = () => setActiveCardIndex((prev) => (prev - 1 + cards.length) % cards.length);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(delta) > 40) {
+      delta < 0 ? nextCard() : prevCard();
+    }
+    touchStartX.current = null;
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    touchStartX.current = e.clientX;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.clientX - touchStartX.current;
+    if (Math.abs(delta) > 40) {
+      delta < 0 ? nextCard() : prevCard();
+    }
+    touchStartX.current = null;
+  };
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative bg-black overflow-x-hidden">
