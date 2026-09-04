@@ -140,19 +140,19 @@ const Index = () => {
           <div className="grid grid-cols-3 gap-2 md:gap-8">
             {[
               {
-                title: "COMUNICAÇÃO VISUAL & PÔSTERS",
+                title: "FLYER ARTÍSTICO",
                 icon: ImageIcon,
-                desc: "Criação de flyers, cartazes de rua e identidades visuais pesadas que traduzem a energia do seu som e dos seus eventos para a pista."
+                desc: "Composições que exploram conceito, estética e manipulação visual para transformar ideias em imagens marcantes."
               },
               {
                 title: "ILUSTRAÇÃO AUTORAL",
                 icon: Video,
-                desc: "Traços exclusivos e ilustrações com atitude de rua para camisas, capas, cartazes e projetos que exigem identidade única."
+                desc: "Ilustrações e criações exclusivas desenvolvidas para dar personalidade e identidade a cada projeto."
               },
               {
-                title: "SOUND SYSTEM & EVENTOS",
+                title: "FLYERS PARA EVENTOS",
                 icon: Layout,
-                desc: "Direção de arte e projetos gráficos completos para festas, coletivos e sound systems que querem dominar a cena com respeito e peso."
+                desc: "Peças desenvolvidas para festas, artistas e eventos, unindo impacto visual, informação e identidade."
               }
             ].map((service, idx) => (
               <div key={idx} className="glass p-3 md:p-10 rounded-xl md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500 relative overflow-hidden flex flex-col items-start text-left border border-white/5 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(255,0,0,0.15)]">
