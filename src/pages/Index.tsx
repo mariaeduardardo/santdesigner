@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
@@ -11,9 +11,41 @@ import ghetoAsset from "@/assets/criado-no-gheto.jpg.asset.json";
 import pretaAsset from "@/assets/preta.jpg.asset.json";
 import pazAsset from "@/assets/formula-da-paz.jpg.asset.json";
 
+const cards = [turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset];
+
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+
+  const nextCard = () => setActiveCardIndex((prev) => (prev + 1) % cards.length);
+  const prevCard = () => setActiveCardIndex((prev) => (prev - 1 + cards.length) % cards.length);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(delta) > 40) {
+      delta < 0 ? nextCard() : prevCard();
+    }
+    touchStartX.current = null;
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    touchStartX.current = e.clientX;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.clientX - touchStartX.current;
+    if (Math.abs(delta) > 40) {
+      delta < 0 ? nextCard() : prevCard();
+    }
+    touchStartX.current = null;
+  };
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative bg-black overflow-x-hidden">
@@ -91,27 +123,44 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex-1 relative animate-float w-full max-w-[120px] sm:max-w-sm lg:max-w-md flex justify-end mt-0">
+            <div className="flex-1 relative w-full max-w-[120px] sm:max-w-sm lg:max-w-md flex justify-end mt-0">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-0 sm:p-4">
-                <div className="relative w-4/5 h-full">
-                  {[turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset].map((asset, index) => {
-                    const isActive = activeCardIndex === index;
+                <div 
+                  className="relative w-4/5 h-full select-none touch-pan-y"
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                  onMouseDown={handleMouseDown}
+                  onMouseUp={handleMouseUp}
+                >
+                  {cards.map((asset, index) => {
+                    const total = cards.length;
+                    // Circular offset from active card: negative = behind-left, positive = behind-right
+                    let offset = index - activeCardIndex;
+                    if (offset > total / 2) offset -= total;
+                    if (offset < -total / 2) offset += total;
+                    const isActive = offset === 0;
+                    const absOffset = Math.abs(offset);
                     return (
                       <div 
                         key={index} 
-                        onClick={() => setActiveCardIndex(index)}
-                        className={`absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden transition-all duration-700 cursor-pointer ${isActive ? 'z-30 scale-100 rotate-0 translate-x-0 -translate-y-4 md:-translate-y-8' : 'z-10 scale-90'}`}
+                        onClick={() => !isActive && setActiveCardIndex(index)}
+                        className="absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden cursor-pointer transition-all duration-700 ease-out animate-float"
                         style={{
-                          transform: !isActive ? `rotate(${(index - activeCardIndex) * 8}deg) translateX(${(index - activeCardIndex) * 15}%)` : undefined,
+                          zIndex: 30 - absOffset,
+                          transform: `rotate(${offset * 7}deg) translateX(${offset * 18}%) translateY(${absOffset * 3}%) scale(${1 - absOffset * 0.06})`,
+                          transformOrigin: 'bottom center',
+                          animationDelay: `${index * 0.4}s`,
+                          animationDuration: '5s',
                         }}
                       >
                         <img 
                           src={asset.url} 
                           alt={`Art ${index + 1}`} 
-                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                          className="w-full h-full object-cover pointer-events-none"
+                          draggable={false}
                         />
                         {!isActive && (
-                          <div className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-colors" />
+                          <div className="absolute inset-0 bg-black/50 hover:bg-black/30 transition-colors" />
                         )}
                       </div>
                     );
