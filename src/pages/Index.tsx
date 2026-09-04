@@ -16,35 +16,47 @@ const cards = [turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pr
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
-  const touchStartX = useRef<number | null>(null);
+  const [dragDelta, setDragDelta] = useState(0);
+  const dragStartX = useRef<number | null>(null);
+  const isDragging = useRef(false);
 
   const nextCard = () => setActiveCardIndex((prev) => (prev + 1) % cards.length);
   const prevCard = () => setActiveCardIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+  const startDrag = (x: number) => {
+    dragStartX.current = x;
+    isDragging.current = true;
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const delta = e.changedTouches[0].clientX - touchStartX.current;
+  const moveDrag = (x: number) => {
+    if (dragStartX.current === null || !isDragging.current) return;
+    // Clamp drag feedback so cards never travel too far
+    setDragDelta(Math.max(-120, Math.min(120, x - dragStartX.current)));
+  };
+
+  const endDrag = (x: number) => {
+    if (dragStartX.current === null) return;
+    const delta = x - dragStartX.current;
     if (Math.abs(delta) > 40) {
       delta < 0 ? nextCard() : prevCard();
     }
-    touchStartX.current = null;
+    dragStartX.current = null;
+    isDragging.current = false;
+    setDragDelta(0);
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    touchStartX.current = e.clientX;
-  };
-
-  const handleMouseUp = (e: React.MouseEvent) => {
-    if (touchStartX.current === null) return;
-    const delta = e.clientX - touchStartX.current;
-    if (Math.abs(delta) > 40) {
-      delta < 0 ? nextCard() : prevCard();
+  const handleTouchStart = (e: React.TouchEvent) => startDrag(e.touches[0].clientX);
+  const handleTouchMove = (e: React.TouchEvent) => moveDrag(e.touches[0].clientX);
+  const handleTouchEnd = (e: React.TouchEvent) => endDrag(e.changedTouches[0].clientX);
+  const handleMouseDown = (e: React.MouseEvent) => startDrag(e.clientX);
+  const handleMouseMove = (e: React.MouseEvent) => moveDrag(e.clientX);
+  const handleMouseUp = (e: React.MouseEvent) => endDrag(e.clientX);
+  const handleMouseLeave = () => {
+    if (isDragging.current && dragStartX.current !== null) {
+      dragStartX.current = null;
+      isDragging.current = false;
+      setDragDelta(0);
     }
-    touchStartX.current = null;
   };
 
   return (
@@ -126,11 +138,15 @@ const Index = () => {
             <div className="flex-1 relative w-full max-w-[120px] sm:max-w-sm lg:max-w-md flex justify-end mt-0">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-0 sm:p-4">
                 <div 
-                  className="relative w-4/5 h-full select-none touch-pan-y"
+                  className="relative w-4/5 h-full select-none touch-pan-y overflow-visible"
+                  style={{ clipPath: 'inset(-20% -60% -20% -60%)' }}
                   onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
                   onMouseDown={handleMouseDown}
+                  onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseUp}
+                  onMouseLeave={handleMouseLeave}
                 >
                   {cards.map((asset, index) => {
                     const total = cards.length;
@@ -140,14 +156,17 @@ const Index = () => {
                     if (offset < -total / 2) offset += total;
                     const isActive = offset === 0;
                     const absOffset = Math.abs(offset);
+                    // Drag feedback: active card follows finger, others shift slightly
+                    const dragX = isActive ? dragDelta * 0.6 : dragDelta * 0.15;
+                    const dragRot = isActive ? dragDelta * 0.05 : 0;
                     return (
                       <div 
                         key={index} 
                         onClick={() => !isActive && setActiveCardIndex(index)}
-                        className="absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden cursor-pointer transition-all duration-700 ease-out animate-float"
+                        className={`absolute inset-0 w-full h-full rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden cursor-pointer ease-out animate-float ${isDragging.current && dragDelta !== 0 ? 'transition-none' : 'transition-all duration-700'}`}
                         style={{
                           zIndex: 30 - absOffset,
-                          transform: `rotate(${offset * 7}deg) translateX(${offset * 18}%) translateY(${absOffset * 3}%) scale(${1 - absOffset * 0.06})`,
+                          transform: `rotate(${offset * 7 + dragRot}deg) translateX(calc(${offset * 18}% + ${dragX}px)) translateY(${absOffset * 3}%) scale(${1 - absOffset * 0.06})`,
                           transformOrigin: 'bottom center',
                           animationDelay: `${index * 0.4}s`,
                           animationDuration: '5s',
@@ -165,6 +184,18 @@ const Index = () => {
                       </div>
                     );
                   })}
+
+                  {/* Position indicators */}
+                  <div className="absolute -bottom-8 md:-bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-1.5 md:gap-2 z-40">
+                    {cards.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActiveCardIndex(index)}
+                        aria-label={`Ir para carta ${index + 1}`}
+                        className={`rounded-full transition-all duration-500 ${index === activeCardIndex ? 'w-4 md:w-6 h-1.5 md:h-2 bg-primary shadow-[0_0_10px_rgba(255,0,0,0.6)]' : 'w-1.5 md:w-2 h-1.5 md:h-2 bg-white/30 hover:bg-white/60'}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-primary/5 rounded-full blur-[100px] -z-10" />
