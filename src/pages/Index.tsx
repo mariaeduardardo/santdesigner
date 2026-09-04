@@ -16,35 +16,47 @@ const cards = [turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pr
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
-  const touchStartX = useRef<number | null>(null);
+  const [dragDelta, setDragDelta] = useState(0);
+  const dragStartX = useRef<number | null>(null);
+  const isDragging = useRef(false);
 
   const nextCard = () => setActiveCardIndex((prev) => (prev + 1) % cards.length);
   const prevCard = () => setActiveCardIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+  const startDrag = (x: number) => {
+    dragStartX.current = x;
+    isDragging.current = true;
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const delta = e.changedTouches[0].clientX - touchStartX.current;
+  const moveDrag = (x: number) => {
+    if (dragStartX.current === null || !isDragging.current) return;
+    // Clamp drag feedback so cards never travel too far
+    setDragDelta(Math.max(-120, Math.min(120, x - dragStartX.current)));
+  };
+
+  const endDrag = (x: number) => {
+    if (dragStartX.current === null) return;
+    const delta = x - dragStartX.current;
     if (Math.abs(delta) > 40) {
       delta < 0 ? nextCard() : prevCard();
     }
-    touchStartX.current = null;
+    dragStartX.current = null;
+    isDragging.current = false;
+    setDragDelta(0);
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    touchStartX.current = e.clientX;
-  };
-
-  const handleMouseUp = (e: React.MouseEvent) => {
-    if (touchStartX.current === null) return;
-    const delta = e.clientX - touchStartX.current;
-    if (Math.abs(delta) > 40) {
-      delta < 0 ? nextCard() : prevCard();
+  const handleTouchStart = (e: React.TouchEvent) => startDrag(e.touches[0].clientX);
+  const handleTouchMove = (e: React.TouchEvent) => moveDrag(e.touches[0].clientX);
+  const handleTouchEnd = (e: React.TouchEvent) => endDrag(e.changedTouches[0].clientX);
+  const handleMouseDown = (e: React.MouseEvent) => startDrag(e.clientX);
+  const handleMouseMove = (e: React.MouseEvent) => moveDrag(e.clientX);
+  const handleMouseUp = (e: React.MouseEvent) => endDrag(e.clientX);
+  const handleMouseLeave = () => {
+    if (isDragging.current && dragStartX.current !== null) {
+      dragStartX.current = null;
+      isDragging.current = false;
+      setDragDelta(0);
     }
-    touchStartX.current = null;
   };
 
   return (
