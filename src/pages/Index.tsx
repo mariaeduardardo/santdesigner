@@ -11,7 +11,17 @@ import ghetoAsset from "@/assets/criado-no-gheto.jpg.asset.json";
 import pretaAsset from "@/assets/preta.jpg.asset.json";
 import pazAsset from "@/assets/formula-da-paz.jpg.asset.json";
 
-const cards = [turmaAsset, boyAsset, loucuraAsset, quebradaAsset, ghetoAsset, pretaAsset, pazAsset];
+const cards = [
+  turmaAsset,
+  boyAsset,
+  loucuraAsset,
+  quebradaAsset,
+  ghetoAsset,
+  pretaAsset,
+  pazAsset,
+  { url: "/uploads/EU_VIM_PRA_VIVER_ISSO.jpg" },
+  { url: "/uploads/MENSAGEM_DE_MADRUGADA.jpg" },
+];
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
