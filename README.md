@@ -1,73 +1,163 @@
-# Welcome to your Lovable project
+# Sant Designer
 
-## Project info
+Crie um site moderno, interativo e responsivo para uma açaíteria chamada Bendito Açaí, focado em delivery e pedidos online.
+Algumas informações que voce precisa esta nesses link 
+https://pedido.anota.ai/loja/benditoo-aacai?f=ms
+https://share.google/AN1U45Gexq5A32PZe
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+O site deve ter visual premium, jovem e vibrante, com cores predominantes roxo, lilás e verde (remetendo ao açaí e frutas). Layout estilo iFood, mas com identidade própria.
 
-## How can I edit this code?
+🎯 OBJETIVO
 
-There are several ways of editing your application.
+Converter visitantes em pedidos no WhatsApp ou carrinho próprio.
 
-**Use Lovable**
+📌 Estrutura do Site:
+1️⃣ Home (Primeira tela impactante)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Banner grande com foto de açaí
 
-Changes made via Lovable will be committed automatically to this repo.
+Frase chamativa:
+“O melhor açaí da região 🍇💜”
 
-**Use your preferred IDE**
+Botão principal: “Fazer Pedido Agora”
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Botão secundário: “Ver Cardápio”
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Avaliações 5 estrelas
 
-Follow these steps:
+Selo de entrega rápida
+
+2️⃣ Cardápio Interativo
+
+Separado por categorias:
+
+Açaí Tradicional
+
+Açaí Especial
+
+Combos
+
+Bebidas
+
+Sistema de adicionar complemento:
+
+Granola
+
+Leite condensado
+
+Nutella
+
+Morango
+
+Banana
+
+Paçoca
+
+Botões “+” e “–” para quantidade
+
+Visual tipo aplicativo
+
+Mostrar preço atualizado conforme adicionais
+
+3️⃣ Carrinho Inteligente
+
+Mostrar resumo do pedido
+
+Cálculo automático
+
+Campo para cupom de desconto
+
+Botão “Finalizar Pedido”
+
+Opção:
+
+WhatsApp
+
+Pix
+
+Cartão na entrega
+
+4️⃣ Diferenciais
+
+Seção com ícones:
+
+🍓 Frutas frescas
+
+🚀 Entrega rápida
+
+💜 Açaí 100% puro
+
+⭐ 5 estrelas no Google
+
+5️⃣ Área de Promoções
+
+Banner para combo da semana
+
+Destaque para “Mais Pedido”
+
+Botão com urgência: “Peça Agora”
+
+6️⃣ Rodapé
+
+Endereço
+
+Horário de funcionamento
+
+Botão flutuante do WhatsApp
+
+Link Instagram
+
+Termos e política de privacidade
+
+⚙️ Funcionalidades Técnicas:
+
+100% responsivo
+
+Animações suaves
+
+Transições modernas
+
+SEO otimizado
+
+Carregamento rápido
+
+Código organizado
+
+Pronto para integração com pagamento
+
+Dashboard simples para editar produtos
+
+🎨 Estilo Visual:
+
+Minimalista moderno
+
+Sombras suaves
+
+Botões arredondados
+
+Ícones animados
+
+Tipografia moderna
+
+Design focado em conversão
+
+This project was built with [Lovable](https://lovable.dev).
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f3e09cd0-57d7-4502-93e0-9f2e35668373).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+git clone <this-repository-url>
+cd <repository-name>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
