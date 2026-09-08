@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&family=Big+Shoulders+Display:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -94,11 +94,30 @@
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    text-shadow: 0 0 28px rgba(255, 0, 0, 0.45), 0 0 60px rgba(255, 0, 0, 0.15);
   }
   
   .glass {
     @apply bg-black/40 backdrop-blur-xl;
+  }
+
+  .glass-strong {
+    background: rgba(12, 12, 12, 0.72);
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .premium-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .premium-card:hover {
+    background: linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 100%);
+    border-color: rgba(255,255,255,0.14);
   }
 
   .neon-border {
@@ -125,7 +144,7 @@
     height: 100%;
     pointer-events: none;
     z-index: 100;
-    opacity: 0.12;
+    opacity: 0.06;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
@@ -136,6 +155,22 @@
     pointer-events: none;
     z-index: -5;
     opacity: 0.4;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,0.12) 50%, transparent 80%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+  .shimmer:hover::after {
+    transform: translateX(100%);
   }
 }
 
