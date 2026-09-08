@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X } from "lucide-react";
+import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
@@ -147,8 +147,24 @@ const Index = () => {
             
             <div className="flex-1 relative w-full max-w-[120px] sm:max-w-sm lg:max-w-md flex justify-end mt-0">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-0 sm:p-4">
+                {/* Setas — só aparecem no desktop */}
+                <button
+                  onClick={prevCard}
+                  aria-label="Carta anterior"
+                  className="hidden md:flex absolute left-0 lg:-left-2 top-1/2 -translate-y-1/2 z-40 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110 active:scale-95"
+                >
+                  <ChevronLeft className="w-5 h-5 text-white" />
+                </button>
+                <button
+                  onClick={nextCard}
+                  aria-label="Próxima carta"
+                  className="hidden md:flex absolute right-0 lg:-right-2 top-1/2 -translate-y-1/2 z-40 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110 active:scale-95"
+                >
+                  <ChevronRight className="w-5 h-5 text-white" />
+                </button>
+
                 <div 
-                  className="relative w-4/5 h-full select-none touch-pan-y overflow-visible"
+                  className="relative w-4/5 h-full select-none touch-pan-y overflow-visible cursor-grab active:cursor-grabbing"
                   style={{ clipPath: 'inset(-20% -60% -20% -60%)' }}
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
