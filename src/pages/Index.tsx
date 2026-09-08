@@ -80,9 +80,9 @@ const Index = () => {
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass">
-        <div className="container mx-auto px-4 md:px-6 py-2 md:py-3 flex items-center justify-between">
+        <div className="container mx-auto px-5 md:px-6 py-3 md:py-3 flex items-center justify-between">
           <div className="flex items-center">
-            <img src={logoAsset.url} alt="Sant Designer Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
+            <img src={logoAsset.url} alt="Sant Designer Logo" className="w-11 h-11 md:w-16 md:h-16 object-contain" />
           </div>
           
           {/* Desktop Menu */}
@@ -118,15 +118,15 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-[90vh] md:min-h-[70vh] flex items-center pt-24 md:pt-32 pb-16 md:pb-32 px-4 md:px-6 overflow-hidden">
+      <section id="hero" className="relative min-h-[90vh] md:min-h-[70vh] flex items-center pt-20 md:pt-32 pb-10 md:pb-32 px-5 md:px-6 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-white/0 rounded-full blur-[120px] -z-10 animate-pulse" />
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-white/0 rounded-full blur-[120px] -z-10 animate-pulse" />
         
         <div className="container mx-auto">
-          <div className="flex flex-row items-center justify-between gap-4 md:gap-8">
-            <div className="flex-1 text-left space-y-6 md:space-y-4 animate-fade-up max-w-3xl">
-              <div className="space-y-4 md:space-y-3">
-                <h1 className="text-2xl sm:text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] uppercase text-white font-display text-left" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
+          <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-10 md:gap-8">
+            <div className="w-full md:flex-1 text-center md:text-left space-y-6 md:space-y-4 animate-fade-up max-w-3xl mx-auto md:mx-0">
+              <div className="space-y-5 md:space-y-3">
+                <h1 className="text-[2.7rem] leading-[0.88] sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase text-white font-display" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
                   comunicação <br />
                   <span className="text-primary text-glow italic relative inline-block">
                     visual
@@ -134,18 +134,18 @@ const Index = () => {
                   </span> PARA <br />
                   EVENTOS E ARTISTAS
                 </h1>
-                <p className="text-[10px] sm:text-sm md:text-lg text-white/80 max-w-xl text-left leading-tight md:leading-relaxed font-medium">
+                <p className="text-[15px] sm:text-base md:text-lg text-white/65 md:text-white/80 max-w-xl mx-auto md:mx-0 leading-relaxed font-medium px-2 sm:px-0">
                   Do conceito à arte final, desenvolvemos identidades visuais marcantes e ilustrações autorais para transformar sua música e seus eventos em referências visuais.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-2">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-10 md:h-12 w-auto px-4 md:px-8 rounded-full text-[10px] md:text-sm shadow-[0_0_30px_rgba(255,0,0,0.4)] transition-all hover:scale-105 uppercase tracking-[0.2em]">
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-14 md:h-12 w-full sm:w-auto px-8 md:px-8 rounded-full text-xs md:text-sm shadow-[0_0_30px_rgba(255,0,0,0.4)] transition-all hover:scale-105 uppercase tracking-[0.2em]">
                   Solicitar Orçamento <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
             </div>
             
-            <div className="flex-1 relative w-full max-w-[120px] sm:max-w-sm lg:max-w-md flex justify-end mt-0">
+            <div className="w-full md:flex-1 relative flex justify-center md:justify-end mt-2 md:mt-0 max-w-[340px] sm:max-w-[400px] md:max-w-md mx-auto md:mx-0">
               <div className="relative w-full aspect-[4/5] flex items-center justify-center p-0 sm:p-4">
                 {/* Setas — só aparecem no desktop */}
                 <button
@@ -231,19 +231,19 @@ const Index = () => {
       </section>
 
       {/* Expertise */}
-      <section id="servicos" className="py-16 md:py-32 px-4 md:px-6 relative">
+      <section id="servicos" className="py-12 md:py-32 px-5 md:px-6 relative">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-20">
-            <div className="space-y-3">
-              <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">O QUE FAZEMOS NA CENA</h2>
-              <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>PROJETOS & IDENTIDADES</h3>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 mb-8 md:mb-20">
+            <div className="space-y-3 text-center md:text-left">
+              <h2 className="text-[11px] md:text-xs font-bold tracking-[0.3em] text-primary uppercase">O QUE FAZEMOS NA CENA</h2>
+              <h3 className="text-[2rem] leading-none sm:text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>PROJETOS &<br className="md:hidden" /> IDENTIDADES</h3>
             </div>
-            <p className="text-white/40 max-w-sm text-left md:text-right leading-relaxed font-medium uppercase text-xs tracking-widest">
+            <p className="text-white/50 md:text-white/40 max-w-sm text-center md:text-right leading-relaxed font-medium md:uppercase text-sm md:text-xs tracking-wide md:tracking-widest px-2 md:px-0">
               Construímos a estética visual completa dos seus lançamentos e eventos para fazer sua arte ecoar com força total dentro e fora da pista.
             </p>
           </div>
           
-          <div className="grid grid-cols-3 gap-2 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
             {[
               {
                 title: "FLYER ARTÍSTICO",
@@ -261,16 +261,16 @@ const Index = () => {
                 desc: "Peças desenvolvidas para festas, artistas e eventos, unindo impacto visual, informação e identidade."
               }
             ].map((service, idx) => (
-              <div key={idx} className="glass p-3 md:p-10 rounded-xl md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500 relative overflow-hidden flex flex-col items-start text-left border border-white/5 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(255,0,0,0.15)]">
+              <div key={idx} className="glass p-6 md:p-10 rounded-2xl md:rounded-[2rem] group hover:bg-white/5 transition-all duration-500 relative overflow-hidden flex flex-col items-start text-left border border-white/5 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(255,0,0,0.15)]">
                 {/* Interactive background glow */}
                 <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-[60px] group-hover:bg-primary/40 transition-all duration-700 pointer-events-none" />
                 
-                <div className="w-8 h-8 md:w-16 md:h-16 bg-white/5 rounded-lg md:rounded-2xl flex items-center justify-center mb-3 md:mb-8 group-hover:bg-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
-                  <service.icon className="w-4 h-4 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-5 md:mb-8 group-hover:bg-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                  <service.icon className="w-7 h-7 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
                 </div>
-                <h4 className="text-[10px] sm:text-lg md:text-2xl font-black mb-2 md:mb-4 text-white uppercase italic group-hover:text-primary transition-colors duration-300" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>{service.title}</h4>
-                <p className="text-[8px] sm:text-sm md:text-lg text-white/50 mb-4 md:mb-8 leading-tight md:leading-relaxed font-medium group-hover:text-white/80 transition-colors duration-300">{service.desc}</p>
-                <a href="#contact" className="mt-auto inline-flex items-center gap-1 md:gap-2 text-[8px] md:text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.1em] md:tracking-[0.2em] relative">
+                <h4 className="text-xl md:text-2xl font-black mb-3 md:mb-4 text-white uppercase italic group-hover:text-primary transition-colors duration-300" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>{service.title}</h4>
+                <p className="text-[14px] md:text-lg text-white/60 md:text-white/50 mb-6 md:mb-8 leading-relaxed font-medium group-hover:text-white/80 transition-colors duration-300">{service.desc}</p>
+                <a href="#contact" className="mt-auto inline-flex items-center gap-2 text-xs font-black text-primary group-hover:gap-4 transition-all tracking-[0.2em] relative">
                   ORÇAMENTO <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-300" />
                 </a>
@@ -282,39 +282,39 @@ const Index = () => {
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 md:py-32 bg-transparent">
-        <div className="container mx-auto px-4 md:px-6 text-center space-y-12 md:space-y-16">
+      <section id="contact" className="py-14 md:py-32 bg-transparent">
+        <div className="container mx-auto px-5 md:px-6 text-center space-y-10 md:space-y-16">
           <div className="space-y-3 md:space-y-4">
-            <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
-            <h3 className="text-4xl md:text-8xl font-black tracking-tighter text-white italic uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
+            <h2 className="text-[11px] md:text-xs font-bold tracking-[0.3em] text-primary uppercase">Vamos conversar?</h2>
+            <h3 className="text-[2.6rem] leading-none sm:text-5xl md:text-8xl font-black tracking-tighter text-white italic uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
               SEU PRÓXIMO <br />
               <span className="text-primary text-glow">PROJETO AQUI</span>
             </h3>
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-16 md:h-20 px-10 md:px-16 rounded-full text-lg md:text-xl group transition-all hover:scale-105 shadow-2xl">
-              FALAR NO WHATSAPP <MessageCircle className="ml-4 w-5 h-5 md:w-6 md:h-6" />
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black h-14 md:h-20 w-full sm:w-auto px-8 md:px-16 rounded-full text-base md:text-xl group transition-all hover:scale-105 shadow-2xl max-w-sm sm:max-w-none">
+              FALAR NO WHATSAPP <MessageCircle className="ml-3 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
 
-          <div className="flex flex-row items-center justify-center gap-4 sm:gap-12 pt-16">
-            <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-1 sm:gap-2 font-bold uppercase tracking-widest text-[8px] sm:text-xs">
-              <Instagram className="w-3 h-3 sm:w-4 sm:h-4" /> Instagram
+          <div className="flex flex-row items-center justify-center gap-5 sm:gap-12 pt-10 md:pt-16">
+            <a href="#" className="text-white/50 hover:text-white transition-colors flex items-center gap-1.5 font-bold uppercase tracking-widest text-[11px] sm:text-xs">
+              <Instagram className="w-4 h-4" /> Instagram
             </a>
-            <a href="#" className="text-white/40 hover:text-white transition-colors flex items-center gap-1 sm:gap-2 font-bold uppercase tracking-widest text-[8px] sm:text-xs">
-              <ImageIcon className="w-3 h-3 sm:w-4 sm:h-4" /> Behance
+            <a href="#" className="text-white/50 hover:text-white transition-colors flex items-center gap-1.5 font-bold uppercase tracking-widest text-[11px] sm:text-xs">
+              <ImageIcon className="w-4 h-4" /> Behance
             </a>
-            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors flex items-center gap-1 sm:gap-2 font-bold uppercase tracking-widest text-[8px] sm:text-xs">
-              <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4" /> WhatsApp
+            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors flex items-center gap-1.5 font-bold uppercase tracking-widest text-[11px] sm:text-xs">
+              <MessageCircle className="w-4 h-4" /> WhatsApp
             </a>
           </div>
           
-          <div className="pt-20">
-            <div className="w-20 h-20 mx-auto mb-8 hover:scale-110 transition-transform cursor-pointer">
+          <div className="pt-12 md:pt-20">
+            <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6 md:mb-8 hover:scale-110 transition-transform cursor-pointer">
               <img src={logoAsset.url} alt="Sant Designer Logo" className="w-full h-full object-contain" />
             </div>
-            <p className="text-[10px] text-white/20 font-bold tracking-[0.5em] uppercase">
+            <p className="text-[9px] md:text-[10px] text-white/30 md:text-white/20 font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase px-4">
               © 2026 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
             </p>
           </div>
