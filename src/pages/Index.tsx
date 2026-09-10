@@ -12,15 +12,15 @@ import pretaAsset from "@/assets/preta.jpg.asset.json";
 import pazAsset from "@/assets/formula-da-paz.jpg.asset.json";
 
 const cards = [
-  turmaAsset,
-  boyAsset,
-  loucuraAsset,
-  quebradaAsset,
-  ghetoAsset,
-  pretaAsset,
-  pazAsset,
-  { url: "/uploads/EU_VIM_PRA_VIVER_ISSO.jpg" },
-  { url: "/uploads/MENSAGEM_DE_MADRUGADA.jpg" },
+  { url: turmaAsset.url, title: "Turma do Bairro" },
+  { url: boyAsset.url, title: "Boy Bobo" },
+  { url: loucuraAsset.url, title: "Ai Que Loucura" },
+  { url: quebradaAsset.url, title: "Arquivo de Quebrada" },
+  { url: ghetoAsset.url, title: "Criado no Gheto" },
+  { url: pretaAsset.url, title: "Preta" },
+  { url: pazAsset.url, title: "Fórmula da Paz" },
+  { url: "/uploads/EU_VIM_PRA_VIVER_ISSO.jpg", title: "Eu Vim Pra Viver Isso" },
+  { url: "/uploads/MENSAGEM_DE_MADRUGADA.jpg", title: "Mensagem de Madrugada" },
 ];
 
 const Index = () => {
@@ -120,9 +120,18 @@ const Index = () => {
                     const isActive = offset === 0;
                     const absOffset = Math.abs(offset);
                     return (
-                      <div 
-                        key={index} 
+                      <div
+                        key={index}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`Ver arte ${asset.title}`}
                         onClick={() => setActiveCardIndex(index)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            setActiveCardIndex(index);
+                          }
+                        }}
                         className="absolute inset-0 w-full h-full rounded-xl bg-zinc-900 overflow-hidden cursor-pointer transition-all duration-500"
                         style={{
                           zIndex: 30 - absOffset,
@@ -132,7 +141,7 @@ const Index = () => {
                       >
                         <img 
                           src={asset.url} 
-                          alt={`Art ${index + 1}`} 
+                          alt={`Arte ${asset.title}`} 
                           className="w-full h-full object-cover"
                         />
                         {!isActive && (
