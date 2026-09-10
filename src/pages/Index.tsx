@@ -88,29 +88,29 @@ const Index = () => {
       </nav>
 
 
-      {/* Hero Section — original bugado */}
-      <section id="hero" className="relative flex items-center pt-10 pb-8 md:pt-16 md:pb-12 overflow-hidden">
-        <div className="mx-auto w-full max-w-[1280px] px-4 md:px-8">
-          <div className="flex flex-row items-center justify-between gap-2 md:justify-center md:gap-16 md:max-w-[1020px] md:mx-auto">
-            <div className="flex-1 max-w-[120px] md:max-w-none md:flex-none md:w-[500px]">
-              <h1 className="text-2xl md:text-6xl md:leading-[0.95] font-black tracking-tighter uppercase text-white leading-none" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
+      {/* Hero Section — layout estrito desktop em qualquer tela */}
+      <section id="hero" className="relative flex items-center pt-16 pb-12 overflow-hidden">
+        <div className="mx-auto w-full max-w-[1020px] px-8">
+          <div className="flex flex-row flex-nowrap items-center justify-center gap-16 max-w-[1020px] mx-auto">
+            <div className="flex-none w-[500px] text-left">
+              <h1 className="text-6xl leading-[0.95] font-black tracking-tighter uppercase text-white" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
                 comunicação <br />
                 <span className="text-primary italic">visual</span> PARA <br />
                 eventos e artistas
               </h1>
 
-              <p className="mt-2 md:mt-5 text-[10px] md:text-base leading-relaxed text-white/60">
+              <p className="mt-5 text-base leading-relaxed text-white/60">
                 Do conceito à arte final, criamos identidades visuais marcantes.
               </p>
 
-              <div className="mt-3 md:mt-8 flex flex-row items-center gap-2">
-                <a href="#contact" className="inline-flex items-center justify-center gap-1 h-10 md:h-12 px-3 md:px-7 bg-primary text-white font-bold text-[10px] md:text-sm uppercase">
-                  Orçamento <ArrowRight className="w-3 h-3" />
+              <div className="mt-8 flex flex-row items-center justify-start gap-2">
+                <a href="#contact" className="inline-flex items-center justify-center gap-2 h-12 px-7 bg-primary text-white font-bold text-sm uppercase">
+                  Orçamento <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
             
-            <div className="w-[120px] h-[160px] md:w-[290px] md:h-[380px] relative flex-shrink-0 flex items-center justify-center">
+            <div className="w-[290px] h-[380px] relative flex-none flex items-center justify-center">
                 <div className="relative w-full h-full">
                   {cards.map((asset, index) => {
                     const total = cards.length;
