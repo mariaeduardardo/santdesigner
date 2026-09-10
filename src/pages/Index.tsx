@@ -38,7 +38,7 @@ const Index = () => {
       
       {/* Navigation — original simples */}
       <nav className="w-full z-50 border-b border-white/10 bg-black">
-        <div className="mx-auto max-w-[1280px] px-4 h-14 flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-[1280px] md:max-w-[880px] px-4 md:px-8 h-14 flex items-center justify-between gap-4">
           <a href="#hero" className="flex items-center gap-2">
             <img src={logoAsset.url} alt="Sant Designer Logo" className="w-8 h-8 object-contain shrink-0" />
             <span className="text-[10px] font-black tracking-[0.2em] text-white">SANT DESIGNER</span>
@@ -89,28 +89,28 @@ const Index = () => {
 
 
       {/* Hero Section — original bugado */}
-      <section id="hero" className="relative flex items-center pt-10 pb-8 overflow-hidden">
-        <div className="mx-auto w-full max-w-[1280px] px-4">
-          <div className="flex flex-row items-center justify-between gap-2">
-            <div className="flex-1 max-w-[120px]">
-              <h1 className="text-2xl font-black tracking-tighter uppercase text-white leading-none" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
+      <section id="hero" className="relative flex items-center pt-10 pb-8 md:pt-14 md:pb-10 overflow-hidden">
+        <div className="mx-auto w-full max-w-[1280px] px-4 md:px-8">
+          <div className="flex flex-row items-center justify-between gap-2 md:justify-center md:gap-12 md:max-w-[880px] md:mx-auto">
+            <div className="flex-1 max-w-[120px] md:max-w-none md:flex-none md:w-[440px]">
+              <h1 className="text-2xl md:text-5xl md:leading-[0.95] font-black tracking-tighter uppercase text-white leading-none" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
                 comunicação <br />
                 <span className="text-primary italic">visual</span> PARA <br />
                 eventos e artistas
               </h1>
 
-              <p className="mt-2 text-[10px] leading-relaxed text-white/60">
+              <p className="mt-2 md:mt-4 text-[10px] md:text-sm leading-relaxed text-white/60">
                 Do conceito à arte final, criamos identidades visuais marcantes.
               </p>
 
-              <div className="mt-3 flex flex-row items-center gap-2">
-                <a href="#contact" className="inline-flex items-center justify-center gap-1 h-10 px-3 bg-primary text-white font-bold text-[10px] uppercase">
+              <div className="mt-3 md:mt-6 flex flex-row items-center gap-2">
+                <a href="#contact" className="inline-flex items-center justify-center gap-1 h-10 md:h-11 px-3 md:px-6 bg-primary text-white font-bold text-[10px] md:text-xs uppercase">
                   Orçamento <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
             </div>
             
-            <div className="w-[120px] h-[160px] relative flex-shrink-0 flex items-center justify-center">
+            <div className="w-[120px] h-[160px] md:w-[250px] md:h-[330px] relative flex-shrink-0 flex items-center justify-center">
                 <div className="relative w-full h-full">
                   {cards.map((asset, index) => {
                     const total = cards.length;
@@ -149,7 +149,7 @@ const Index = () => {
 
       {/* Expertise — original simples bugado */}
       <section id="servicos" className="py-8 relative">
-        <div className="mx-auto max-w-[1280px] px-4">
+        <div className="mx-auto max-w-[1280px] md:max-w-[880px] px-4 md:px-8">
           <div className="mb-4">
             <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">O que fazemos</span>
             <h3 className="text-2xl font-black tracking-tighter text-white uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
@@ -197,7 +197,7 @@ const Index = () => {
 
       {/* Contact Section — original simples */}
       <section id="contact" className="py-8 bg-transparent">
-        <div className="container mx-auto px-4 text-center space-y-6">
+        <div className="container mx-auto px-4 md:max-w-[880px] md:px-8 text-center space-y-6">
           <div className="space-y-2">
             <h2 className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Vamos conversar?</h2>
             <h3 className="text-2xl font-black tracking-tighter text-white italic uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
