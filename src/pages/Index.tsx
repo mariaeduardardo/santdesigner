@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
@@ -26,6 +26,22 @@ const cards = [
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white relative bg-[#070707] overflow-x-hidden antialiased">
@@ -60,10 +76,13 @@ const Index = () => {
           {/* Mobile Actions */}
           <div className="flex md:hidden items-center gap-2">
             <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-8 px-3 bg-white text-black text-[10px] font-bold">WHATSAPP</a>
-            <button 
+            <button
+              type="button"
               className="w-8 h-8 bg-white/10 border border-white/10 text-white flex items-center justify-center"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle Menu"
+              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
@@ -71,15 +90,38 @@ const Index = () => {
         </div>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-black z-50 md:hidden flex flex-col ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-          <div className="flex flex-col px-6 pt-20 pb-10 h-full">
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu de navegação"
+          aria-hidden={!isMenuOpen}
+          className={`fixed inset-0 z-[60] md:hidden flex flex-col bg-[#070707] bg-textured transition-opacity duration-300 ease-out ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        >
+          <div className="noise-overlay" aria-hidden="true" />
+          <div className={`absolute inset-0 pointer-events-none bg-grid transition-opacity duration-300 ${isMenuOpen ? "opacity-[0.06]" : "opacity-0"}`} aria-hidden="true" />
+          <div className={`relative flex items-center justify-between px-4 h-14 border-b border-white/10 transition-all duration-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"}`}>
+            <span className="flex items-center gap-2">
+              <img src={logoAsset.url} alt="Sant Designer Logo" className="w-8 h-8 object-contain shrink-0" />
+              <span className="text-[10px] font-black tracking-[0.2em] text-white">SANT DESIGNER</span>
+            </span>
+            <button
+              type="button"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Fechar menu"
+              className="w-9 h-9 bg-white/10 border border-white/15 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+          <div className={`relative flex flex-col px-6 pt-8 pb-10 h-full transition-all duration-300 ease-out ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
             <div className="flex flex-col gap-2 text-2xl font-black uppercase">
-              <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="py-3 text-white border-b border-white/10">Serviços</a>
-              <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="py-3 text-white border-b border-white/10">Portfólio</a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="py-3 text-white border-b border-white/10">Contato</a>
+              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="py-3 text-white border-b border-white/10">Serviços</a>
+              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="py-3 text-white border-b border-white/10">Portfólio</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="py-3 text-white border-b border-white/10">Contato</a>
             </div>
             <div className="mt-auto">
-              <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 h-10 bg-primary text-white font-bold text-sm">
+              <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" tabIndex={isMenuOpen ? 0 : -1} className="flex items-center justify-center gap-2 h-10 bg-primary text-white font-bold text-sm">
                 FALAR NO WHATSAPP <ArrowRight className="w-4 h-4" />
               </a>
             </div>
