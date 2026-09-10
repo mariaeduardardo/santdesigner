@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, Send, MessageCircle, Menu, X } from "lucide-react";
+import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
@@ -36,9 +36,9 @@ const Index = () => {
       <Background />
       <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-[0.03]" />
       
-      {/* Navigation — original simples */}
+      {/* Navigation */}
       <nav className="w-full z-50 border-b border-white/10 bg-black">
-        <div className="mx-auto max-w-[1280px] md:max-w-[1020px] px-4 md:px-8 h-14 flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-[880px] px-4 md:px-6 h-14 flex items-center justify-between gap-4">
           <a href="#hero" className="flex items-center gap-2">
             <img src={logoAsset.url} alt="Sant Designer Logo" className="w-8 h-8 object-contain shrink-0" />
             <span className="text-[10px] font-black tracking-[0.2em] text-white">SANT DESIGNER</span>
@@ -88,29 +88,29 @@ const Index = () => {
       </nav>
 
 
-      {/* Hero Section — layout estrito desktop em qualquer tela */}
-      <section id="hero" className="relative flex items-center pt-16 pb-12 overflow-hidden">
-        <div className="mx-auto w-full max-w-[1020px] px-8">
-          <div className="flex flex-row flex-nowrap items-center justify-center gap-16 max-w-[1020px] mx-auto">
-            <div className="flex-none w-[500px] text-left">
-              <h1 className="text-6xl leading-[0.95] font-black tracking-tighter uppercase text-white" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
+      {/* Hero Section */}
+      <section id="hero" className="relative flex items-center pt-10 pb-10 md:pt-14 md:pb-12 overflow-hidden">
+        <div className="mx-auto w-full max-w-[880px] px-4 md:px-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-[880px] mx-auto">
+            <div className="w-full md:w-[440px] flex-none text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl leading-[0.95] font-black tracking-tighter uppercase text-white" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
                 comunicação <br />
                 <span className="text-primary italic">visual</span> PARA <br />
                 eventos e artistas
               </h1>
 
-              <p className="mt-5 text-base leading-relaxed text-white/60">
+              <p className="mt-4 text-sm md:text-base leading-relaxed text-white/60">
                 Do conceito à arte final, criamos identidades visuais marcantes.
               </p>
 
-              <div className="mt-8 flex flex-row items-center justify-start gap-2">
-                <a href="#contact" className="inline-flex items-center justify-center gap-2 h-12 px-7 bg-primary text-white font-bold text-sm uppercase">
+              <div className="mt-6 flex flex-col sm:flex-row items-center md:items-center justify-center md:justify-start gap-2">
+                <a href="#contact" className="inline-flex items-center justify-center gap-2 h-11 px-6 bg-primary text-white font-bold text-sm uppercase">
                   Orçamento <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
             
-            <div className="w-[290px] h-[380px] relative flex-none flex items-center justify-center">
+            <div className="w-[240px] h-[320px] md:w-[260px] md:h-[340px] relative flex-none flex items-center justify-center">
                 <div className="relative w-full h-full">
                   {cards.map((asset, index) => {
                     const total = cards.length;
@@ -147,9 +147,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Expertise — original simples bugado */}
+      {/* Expertise */}
       <section id="servicos" className="py-8 md:py-12 relative">
-        <div className="mx-auto max-w-[1280px] md:max-w-[1020px] px-4 md:px-8">
+        <div className="mx-auto max-w-[880px] px-4 md:px-6">
           <div className="mb-4 md:mb-6">
             <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">O que fazemos</span>
             <h3 className="text-2xl md:text-3xl font-black tracking-tighter text-white uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
@@ -157,7 +157,7 @@ const Index = () => {
             </h3>
           </div>
           
-          <div className="grid grid-cols-3 gap-2 md:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
             {[
               {
                 kicker: "01 — Arte que para o feed",
@@ -178,14 +178,14 @@ const Index = () => {
                 desc: "Peças para festas e artistas."
               }
             ].map((service, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 p-3 md:p-5 flex flex-col text-left">
-                <p className="text-[10px] font-bold text-white/40 uppercase">{service.kicker}</p>
-                <div className="mt-2 md:mt-3 w-8 h-8 md:w-10 md:h-10 bg-white text-black flex items-center justify-center">
-                  <service.icon className="w-4 h-4 md:w-5 md:h-5" />
+              <div key={idx} className="bg-white/5 border border-white/10 p-5 flex flex-col text-left">
+                <p className="text-[11px] font-bold text-white/40 uppercase">{service.kicker}</p>
+                <div className="mt-3 w-10 h-10 bg-white text-black flex items-center justify-center">
+                  <service.icon className="w-5 h-5" />
                 </div>
-                <h4 className="mt-2 md:mt-3 text-[10px] md:text-sm leading-none font-black text-white uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>{service.title}</h4>
-                <p className="text-[10px] md:text-xs text-white/50 mt-1 md:mt-2">{service.desc}</p>
-                <a href="#contact" className="mt-2 md:mt-3 inline-flex items-center gap-1 text-[10px] md:text-xs font-bold text-primary">
+                <h4 className="mt-3 text-sm leading-none font-black text-white uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>{service.title}</h4>
+                <p className="text-xs text-white/50 mt-2">{service.desc}</p>
+                <a href="#contact" className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-primary">
                   ORÇAMENTO <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
@@ -195,19 +195,19 @@ const Index = () => {
       </section>
 
 
-      {/* Contact Section — original simples */}
+      {/* Contact Section */}
       <section id="contact" className="py-8 md:py-12 bg-transparent">
-        <div className="container mx-auto px-4 md:max-w-[1020px] md:px-8 text-center space-y-6 md:space-y-8">
-          <div className="space-y-2 md:space-y-3">
-            <h2 className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-primary uppercase">Vamos conversar?</h2>
+        <div className="mx-auto max-w-[880px] px-4 md:px-6 text-center space-y-8">
+          <div className="space-y-3">
+            <h2 className="text-xs font-bold tracking-[0.2em] text-primary uppercase">Vamos conversar?</h2>
             <h3 className="text-2xl md:text-4xl font-black tracking-tighter text-white italic uppercase" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
               SEU PRÓXIMO <br />
               <span className="text-primary">PROJETO AQUI</span>
             </h3>
           </div>
           
-          <div className="flex flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold h-10 md:h-12 px-6 md:px-8 text-xs md:text-sm">
+          <div className="flex items-center justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold h-12 px-8 text-sm">
               FALAR NO WHATSAPP <MessageCircle className="ml-2 w-4 h-4" />
             </Button>
           </div>
@@ -225,10 +225,10 @@ const Index = () => {
           </div>
           
           <div className="pt-12 md:pt-20">
-            <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6 md:mb-8 hover:scale-110 transition-transform cursor-pointer">
+            <div className="w-20 h-20 mx-auto mb-8 hover:scale-110 transition-transform cursor-pointer">
               <img src={logoAsset.url} alt="Sant Designer Logo" className="w-full h-full object-contain" />
             </div>
-            <p className="text-[9px] md:text-[10px] text-white/30 md:text-white/20 font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase px-4">
+            <p className="text-[10px] text-white/20 font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase px-4">
               © 2026 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
             </p>
           </div>
