@@ -96,35 +96,31 @@ const Index = () => {
           aria-modal="true"
           aria-label="Menu de navegação"
           aria-hidden={!isMenuOpen}
-          className={`fixed inset-0 z-[60] md:hidden flex flex-col bg-[#070707] bg-textured transition-opacity duration-300 ease-out ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+          className={`fixed inset-0 z-[60] md:hidden flex flex-col bg-black/95 backdrop-blur-sm transition-opacity duration-300 ease-out ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         >
-          <div className="noise-overlay" aria-hidden="true" />
-          <div className={`absolute inset-0 pointer-events-none bg-grid transition-opacity duration-300 ${isMenuOpen ? "opacity-[0.06]" : "opacity-0"}`} aria-hidden="true" />
-          <div className={`relative flex items-center justify-between px-4 h-14 border-b border-white/10 transition-all duration-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"}`}>
+          <div className={`relative flex items-center justify-between px-5 h-16 transition-all duration-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"}`}>
             <span className="flex items-center gap-2">
               <img src={logoAsset.url} alt="Sant Designer Logo" className="w-8 h-8 object-contain shrink-0" />
-              <span className="text-[10px] font-black tracking-[0.2em] text-white">SANT DESIGNER</span>
+              <span className="text-[10px] font-black tracking-[0.2em] text-white/80">SANT DESIGNER</span>
             </span>
             <button
               type="button"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Fechar menu"
-              className="w-9 h-9 bg-white/10 border border-white/15 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+              className="w-9 h-9 text-white/60 flex items-center justify-center hover:text-white transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
-          <div className={`relative flex flex-col px-6 pt-8 pb-10 h-full transition-all duration-300 ease-out ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
-            <div className="flex flex-col gap-2 text-2xl font-black uppercase">
-              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="py-3 text-white border-b border-white/10">Serviços</a>
-              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="py-3 text-white border-b border-white/10">Portfólio</a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="py-3 text-white border-b border-white/10">Contato</a>
+          <div className={`relative flex flex-col items-center justify-center px-8 py-12 flex-1 transition-all duration-300 ease-out ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
+            <div className="flex flex-col items-center gap-8 text-center text-3xl font-black uppercase tracking-tight" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
+              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 hover:text-white transition-colors">Serviços</a>
+              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 hover:text-white transition-colors">Portfólio</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 hover:text-white transition-colors">Contato</a>
             </div>
-            <div className="mt-auto">
-              <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" tabIndex={isMenuOpen ? 0 : -1} className="flex items-center justify-center gap-2 h-10 bg-primary text-white font-bold text-sm">
-                FALAR NO WHATSAPP <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" tabIndex={isMenuOpen ? 0 : -1} className="mt-14 inline-flex items-center justify-center gap-2 h-10 px-5 bg-white/10 border border-white/10 text-white/80 hover:text-white hover:bg-white/15 transition-colors font-bold text-xs tracking-[0.18em] uppercase">
+              Falar no WhatsApp <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </nav>
