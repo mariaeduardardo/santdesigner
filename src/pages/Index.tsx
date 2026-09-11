@@ -47,6 +47,8 @@ const Index = () => {
     <div className="min-h-screen w-full selection:bg-primary selection:text-white relative bg-black overflow-x-hidden antialiased">
       {/* Noise Overlay */}
       <div className="noise-overlay" />
+      {/* Film Grain analógico sutil por cima de tudo */}
+      <div aria-hidden="true" className="film-grain" />
       
       {/* Background */}
       <Background />
