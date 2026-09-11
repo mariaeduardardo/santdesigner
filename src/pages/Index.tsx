@@ -3,6 +3,7 @@ import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, MessageCircle
 import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
 import StreetCursor from "@/components/StreetCursor";
+import SoundToggle from "@/components/SoundToggle";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 import turmaAsset from "@/assets/turma-do-bairro.jpg.asset.json";
 import boyAsset from "@/assets/boy-bobo.jpg.asset.json";
@@ -72,6 +73,7 @@ const Index = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <SoundToggle />
             <a href="#contact" className="inline-flex items-center justify-center h-8 px-4 bg-white text-black text-[11px] font-bold uppercase">
               Orçamento
             </a>
@@ -79,6 +81,7 @@ const Index = () => {
 
           {/* Mobile Actions */}
           <div className="flex md:hidden items-center gap-2">
+            <SoundToggle />
             <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-8 px-3 bg-white text-black text-[10px] font-bold">WHATSAPP</a>
             <button
               type="button"
@@ -282,6 +285,9 @@ const Index = () => {
             <p className="text-[10px] text-white/20 font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase px-4">
               © 2026 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
             </p>
+            <div className="mt-5 flex items-center justify-center">
+              <SoundToggle showLabel />
+            </div>
           </div>
         </div>
       </section>
