@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ArrowRight, Layout, Image as ImageIcon, Video, Instagram, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
+import StreetCursor from "@/components/StreetCursor";
 import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
 import turmaAsset from "@/assets/turma-do-bairro.jpg.asset.json";
 import boyAsset from "@/assets/boy-bobo.jpg.asset.json";
@@ -49,6 +50,7 @@ const Index = () => {
       <div className="noise-overlay" />
       {/* Film Grain analógico sutil por cima de tudo */}
       <div aria-hidden="true" className="film-grain" />
+      <StreetCursor />
       
       {/* Background */}
       <Background />
