@@ -44,7 +44,7 @@ const Index = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className="min-h-screen selection:bg-primary selection:text-white relative bg-[#070707] overflow-x-hidden antialiased">
+    <div className="min-h-screen w-full selection:bg-primary selection:text-white relative bg-black overflow-x-hidden antialiased">
       {/* Noise Overlay */}
       <div className="noise-overlay" />
       
@@ -53,7 +53,7 @@ const Index = () => {
       <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-[0.03]" />
       
       {/* Navigation */}
-      <nav className="w-full z-50 border-b border-white/10 bg-black">
+      <nav className="w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-md">
         <div className="mx-auto max-w-[880px] px-4 md:px-6 h-14 flex items-center justify-between gap-4">
           <a href="#hero" className="flex items-center gap-2">
             <img src={logoAsset.url} alt="Sant Designer Logo" className="w-8 h-8 object-contain shrink-0" />
