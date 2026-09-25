@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,6 +98,41 @@
 }
 
 @layer utilities {
+  .background-drift {
+    transform-origin: center;
+    animation: background-drift 34s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  @keyframes background-drift {
+    from {
+      transform: scale(1.04) translate3d(-0.35%, 0.25%, 0);
+    }
+    to {
+      transform: scale(1.09) translate3d(0.35%, -0.25%, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .background-drift {
+      animation: none;
+      transform: scale(1.04);
+      will-change: auto;
+    }
+  }
+
+  .flyer-carousel {
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .flyer-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
   .glass {
     @apply bg-black/40 backdrop-blur-xl;
   }
