@@ -1,0 +1,8 @@
+<svg width="1280" height="1280" viewBox="0 0 1280 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="1280" fill="#18181B"/>
+  <circle cx="640" cy="430" r="260" fill="#E11D2A" fill-opacity="0.2"/>
+  <path d="M390 900L520 420H760L890 900H390Z" fill="#F4F4F5" fill-opacity="0.95"/>
+  <path d="M600 400L640 320L680 400H600Z" fill="#E11D2A"/>
+  <text x="640" y="1040" text-anchor="middle" fill="#F4F4F5" font-size="110" font-family="Arial, Helvetica, sans-serif" font-weight="900">AI QUE</text>
+  <text x="640" y="1140" text-anchor="middle" fill="#E11D2A" font-size="110" font-family="Arial, Helvetica, sans-serif" font-weight="900">LOUCURA</text>
+</svg>

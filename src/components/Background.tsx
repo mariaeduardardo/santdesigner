@@ -1,5 +1,4 @@
 import React from 'react';
-import backgroundAsset from "@/assets/site-background.jpg.asset.json";
 
 const Background = () => {
   return (
@@ -8,7 +7,7 @@ const Background = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 grayscale-[0.25] contrast-125 brightness-[0.55]"
         style={{
-          backgroundImage: `url(${backgroundAsset.url})`,
+          backgroundImage: 'url("/images/site-background.svg")',
           backgroundSize: "cover",
           backgroundPosition: "center center",
           backgroundRepeat: "no-repeat",

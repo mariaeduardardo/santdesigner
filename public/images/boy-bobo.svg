@@ -1,0 +1,8 @@
+<svg width="1280" height="1280" viewBox="0 0 1280 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="1280" fill="#0A0A0A"/>
+  <rect x="100" y="100" width="1080" height="1080" fill="#1A1A1A"/>
+  <circle cx="640" cy="500" r="230" fill="#F4F4F5" fill-opacity="0.9"/>
+  <path d="M440 770C480 640 560 570 640 570C720 570 800 640 840 770V900H440V770Z" fill="#E11D2A"/>
+  <path d="M480 470L610 420L740 470V620H480V470Z" fill="#111111"/>
+  <text x="640" y="1030" text-anchor="middle" fill="#F4F4F5" font-size="130" font-family="Arial, Helvetica, sans-serif" font-weight="900">BOY BOBO</text>
+</svg>

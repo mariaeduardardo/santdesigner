@@ -1,0 +1,8 @@
+<svg width="1280" height="1280" viewBox="0 0 1280 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="1280" fill="#09090B"/>
+  <circle cx="640" cy="470" r="310" fill="#E11D2A" fill-opacity="0.15"/>
+  <path d="M350 840H930L790 1030H490L350 840Z" fill="#F4F4F5" fill-opacity="0.88"/>
+  <path d="M490 360H790L690 720H590L490 360Z" fill="#E11D2A"/>
+  <text x="640" y="1040" text-anchor="middle" fill="#F4F4F5" font-size="90" font-family="Arial, Helvetica, sans-serif" font-weight="900">FÓRMULA DA</text>
+  <text x="640" y="1135" text-anchor="middle" fill="#E11D2A" font-size="100" font-family="Arial, Helvetica, sans-serif" font-weight="900">PAZ</text>
+</svg>

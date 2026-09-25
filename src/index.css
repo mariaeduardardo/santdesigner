@@ -213,7 +213,8 @@
     left: 0;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.25s ease, scale 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    transform: translate(-50%, -50%) scale(var(--cursor-scale, 1));
+    transition: opacity 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
   }
 
   .street-cursor-ring[data-visible="true"],
@@ -221,12 +222,11 @@
     opacity: 1;
   }
 
-  /* Anel da mira — segue com atraso (lerp via rAF) */
+  /* Anel da mira — posicionado exatamente na coordenada real do ponteiro */
   .street-cursor-ring {
     width: 36px;
     height: 36px;
-    margin: -18px 0 0 -18px;
-    scale: 1;
+    --cursor-scale: 1;
   }
 
   .street-cursor-circle {
@@ -258,16 +258,15 @@
   .street-cursor-dot {
     width: 6px;
     height: 6px;
-    margin: -3px 0 0 -3px;
+    --cursor-scale: 1;
     border-radius: 9999px;
     background: #ff0000;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7), 0 0 8px rgba(255, 0, 0, 0.8);
-    scale: 1;
   }
 
   /* Reação sobre links, botões e cartas */
   .street-cursor-ring[data-hover="true"] {
-    scale: 1.55;
+    --cursor-scale: 1.55;
   }
 
   .street-cursor-ring[data-hover="true"] .street-cursor-circle {
@@ -280,17 +279,17 @@
   }
 
   .street-cursor-dot[data-hover="true"] {
-    scale: 0.6;
+    --cursor-scale: 0.6;
     background: #ffffff;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7);
   }
 
   .street-cursor-ring[data-pressed="true"] {
-    scale: 0.85;
+    --cursor-scale: 0.85;
   }
 
   .street-cursor-dot[data-pressed="true"] {
-    scale: 1.8;
+    --cursor-scale: 1.8;
   }
 }
 

@@ -1,0 +1,7 @@
+<svg width="1280" height="1280" viewBox="0 0 1280 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="1280" fill="#121212"/>
+  <path d="M180 980L390 300H890L1100 980H180Z" fill="#1A1A1A" stroke="#F4F4F5" stroke-opacity="0.2"/>
+  <path d="M410 980L550 430H730L870 980H410Z" fill="#E11D2A" fill-opacity="0.72"/>
+  <text x="640" y="1080" text-anchor="middle" fill="#F4F4F5" font-size="80" font-family="Arial, Helvetica, sans-serif" font-weight="900">ARQUIVO</text>
+  <text x="640" y="1160" text-anchor="middle" fill="#E11D2A" font-size="90" font-family="Arial, Helvetica, sans-serif" font-weight="900">QUEBRADA</text>
+</svg>

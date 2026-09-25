@@ -18,28 +18,21 @@ const StreetCursor = () => {
     setEnabled(true);
     document.documentElement.classList.add("street-cursor-on");
 
-    const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    const target = { x: pos.x, y: pos.y };
-    let raf = 0;
+    const applyPosition = (x: number, y: number) => {
+      if (dotRef.current) {
+        dotRef.current.style.left = `${x}px`;
+        dotRef.current.style.top = `${y}px`;
+      }
+      if (ringRef.current) {
+        ringRef.current.style.left = `${x}px`;
+        ringRef.current.style.top = `${y}px`;
+      }
+    };
 
     const onMove = (e: MouseEvent) => {
-      target.x = e.clientX;
-      target.y = e.clientY;
+      applyPosition(e.clientX, e.clientY);
       setVisible(true);
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-      }
     };
-
-    const loop = () => {
-      pos.x += (target.x - pos.x) * 0.22;
-      pos.y += (target.y - pos.y) * 0.22;
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
-      }
-      raf = requestAnimationFrame(loop);
-    };
-    raf = requestAnimationFrame(loop);
 
     const onOver = (e: MouseEvent) => {
       const el = e.target as HTMLElement | null;
@@ -57,8 +50,11 @@ const StreetCursor = () => {
     document.documentElement.addEventListener("mouseleave", onLeave);
     document.documentElement.addEventListener("mouseenter", onEnter);
 
+    const initialX = window.innerWidth / 2;
+    const initialY = window.innerHeight / 2;
+    applyPosition(initialX, initialY);
+
     return () => {
-      cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
       window.removeEventListener("mousedown", onDown);

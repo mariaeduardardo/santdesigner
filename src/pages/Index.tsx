@@ -4,25 +4,25 @@ import { Button } from "@/components/ui/button";
 import Background from "@/components/Background";
 import StreetCursor from "@/components/StreetCursor";
 import SoundToggle from "@/components/SoundToggle";
-import logoAsset from "@/assets/LOGO-SANT.png.asset.json";
-import turmaAsset from "@/assets/turma-do-bairro.jpg.asset.json";
-import boyAsset from "@/assets/boy-bobo.jpg.asset.json";
-import loucuraAsset from "@/assets/ai-que-loucura.jpg.asset.json";
-import quebradaAsset from "@/assets/arquivo-de-quebrada.jpg.asset.json";
-import ghetoAsset from "@/assets/criado-no-gheto.jpg.asset.json";
-import pretaAsset from "@/assets/preta.jpg.asset.json";
-import pazAsset from "@/assets/formula-da-paz.jpg.asset.json";
+
+const logoAsset = "/images/logo-sant.svg";
+const logoClassName = "w-9 h-9 md:w-11 md:h-11 object-contain shrink-0";
 
 const cards = [
-  { url: turmaAsset.url, title: "Turma do Bairro" },
-  { url: boyAsset.url, title: "Boy Bobo" },
-  { url: loucuraAsset.url, title: "Ai Que Loucura" },
-  { url: quebradaAsset.url, title: "Arquivo de Quebrada" },
-  { url: ghetoAsset.url, title: "Criado no Gheto" },
-  { url: pretaAsset.url, title: "Preta" },
-  { url: pazAsset.url, title: "Fórmula da Paz" },
+  { url: "/uploads/TURMA_DO_BAIRRO.jpg", title: "Turma do Bairro" },
+  { url: "/uploads/BOY_BOBO.jpg", title: "Boy Bobo" },
+  { url: "/uploads/AI_QUE_LOUCURA_1.jpg", title: "Ai Que Loucura" },
+  { url: "/uploads/ARQUIVO_DE_QUEBRADA.jpg", title: "Arquivo de Quebrada" },
+  { url: "/uploads/CRIADO_NO_GHETO.jpg", title: "Criado no Gheto" },
+  { url: "/uploads/PRETA.jpg", title: "Preta" },
+  { url: "/uploads/FORMULA_DA_PAZ.jpg", title: "Fórmula da Paz" },
   { url: "/uploads/EU_VIM_PRA_VIVER_ISSO.jpg", title: "Eu Vim Pra Viver Isso" },
   { url: "/uploads/MENSAGEM_DE_MADRUGADA.jpg", title: "Mensagem de Madrugada" },
+  { url: "/uploads/CAI_PRA_TRETA.jpg", title: "Cai Pra Treta" },
+  { url: "/uploads/CAPA_FARMANDO_AURA.jpg", title: "Farmando Aura" },
+  { url: "/uploads/ONDAS_SONORAS.jpg", title: "Ondas Sonoras" },
+  { url: "/uploads/PELE_DE_LOBO.jpeg", title: "Pele de Lobo" },
+  { url: "/uploads/Copia_de_CAPA_PAPARAZZI_1.jpg", title: "Capa Paparazzi" },
 ];
 
 const Index = () => {
@@ -58,11 +58,11 @@ const Index = () => {
       <div className="fixed inset-0 pointer-events-none -z-10 bg-grid opacity-[0.03]" />
       
       {/* Navigation */}
-      <nav className="w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-md">
-        <div className="mx-auto max-w-[880px] px-4 md:px-6 h-14 flex items-center justify-between gap-4">
-          <a href="#hero" className="flex items-center gap-2">
-            <img src={logoAsset.url} alt="Sant Designer Logo" className="w-8 h-8 object-contain shrink-0" />
-            <span className="text-[10px] font-black tracking-[0.2em] text-white">SANT DESIGNER</span>
+      <nav className="relative z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-md">
+        <div className="mx-auto flex h-14 max-w-[880px] items-center justify-between gap-3 px-3 md:px-6">
+          <a href="#hero" className="flex min-w-0 items-center gap-2">
+            <img src={logoAsset} alt="Logo Sant Designer" className={logoClassName} />
+            <span className="truncate text-[10px] font-black tracking-[0.18em] text-white">SANT DESIGNER</span>
           </a>
           
           {/* Desktop Menu */}
@@ -80,12 +80,11 @@ const Index = () => {
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex md:hidden items-center gap-2">
-            <SoundToggle />
-            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-8 px-3 bg-white text-black text-[10px] font-bold">WHATSAPP</a>
+          <div className="flex items-center gap-2 md:hidden">
+            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" className="inline-flex h-8 items-center justify-center bg-white px-3 text-[10px] font-bold text-black uppercase">WHATSAPP</a>
             <button
               type="button"
-              className="w-8 h-8 bg-white/10 border border-white/10 text-white flex items-center justify-center"
+              className="flex h-8 w-8 items-center justify-center border border-white/10 bg-white/10 text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={isMenuOpen}
@@ -103,29 +102,29 @@ const Index = () => {
           aria-modal="true"
           aria-label="Menu de navegação"
           aria-hidden={!isMenuOpen}
-          className={`fixed inset-0 z-[60] md:hidden flex flex-col bg-black/95 backdrop-blur-sm transition-opacity duration-300 ease-out ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+          className={`fixed inset-x-0 top-14 bottom-0 z-[80] flex flex-col bg-black/95 backdrop-blur-sm transition-all duration-300 ease-out md:hidden ${isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
         >
-          <div className={`relative flex items-center justify-between px-5 h-16 transition-all duration-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"}`}>
+          <div className={`relative flex h-16 items-center justify-between px-5 transition-all duration-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"}`}>
             <span className="flex items-center gap-2">
-              <img src={logoAsset.url} alt="Sant Designer Logo" className="w-8 h-8 object-contain shrink-0" />
+              <img src={logoAsset} alt="Logo Sant Designer" className={logoClassName} />
               <span className="text-[10px] font-black tracking-[0.2em] text-white/80">SANT DESIGNER</span>
             </span>
             <button
               type="button"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Fechar menu"
-              className="w-9 h-9 text-white/60 flex items-center justify-center hover:text-white transition-colors"
+              className="flex h-9 w-9 items-center justify-center text-white/60 transition-colors hover:text-white"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
-          <div className={`relative flex flex-col items-center justify-center px-8 py-12 flex-1 transition-all duration-300 ease-out ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
+          <div className={`relative flex flex-1 flex-col items-center justify-center px-8 py-12 transition-all duration-300 ease-out ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
             <div className="flex flex-col items-center gap-8 text-center text-3xl font-black uppercase tracking-tight" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
-              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 hover:text-white transition-colors">Serviços</a>
-              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 hover:text-white transition-colors">Portfólio</a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 hover:text-white transition-colors">Contato</a>
+              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 transition-colors hover:text-white">Serviços</a>
+              <a href="#servicos" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 transition-colors hover:text-white">Portfólio</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} tabIndex={isMenuOpen ? 0 : -1} className="text-white/90 transition-colors hover:text-white">Contato</a>
             </div>
-            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" tabIndex={isMenuOpen ? 0 : -1} className="mt-14 inline-flex items-center justify-center gap-2 h-10 px-5 bg-white/10 border border-white/10 text-white/80 hover:text-white hover:bg-white/15 transition-colors font-bold text-xs tracking-[0.18em] uppercase">
+            <a href="https://wa.me/5531996068614" target="_blank" rel="noopener noreferrer" tabIndex={isMenuOpen ? 0 : -1} className="mt-14 inline-flex h-10 items-center justify-center gap-2 border border-white/10 bg-white/10 px-5 text-xs font-bold uppercase tracking-[0.18em] text-white/80 transition-colors hover:bg-white/15 hover:text-white">
               Falar no WhatsApp <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -134,29 +133,29 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative flex items-center pt-10 pb-10 md:pt-14 md:pb-12 overflow-hidden">
+      <section id="hero" className="relative z-10 flex items-center overflow-hidden pt-8 pb-10 md:pt-14 md:pb-12">
         <div className="mx-auto w-full max-w-[880px] px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-[880px] mx-auto">
-            <div className="w-full md:w-[440px] flex-none text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl leading-[0.95] font-black tracking-tighter uppercase text-white" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
+          <div className="mx-auto flex max-w-[880px] flex-col items-start justify-center gap-8 md:flex-row md:items-center md:justify-center md:gap-12">
+            <div className="w-full max-w-[440px] flex-none text-left md:w-[440px] md:text-left">
+              <h1 className="text-[2.7rem] leading-[0.86] font-black tracking-[-0.07em] uppercase text-white sm:text-5xl md:text-5xl md:leading-[0.95]" style={{ fontFamily: '"Big Shoulders Display", sans-serif', fontWeight: 900 }}>
                 comunicação <br />
                 <span className="text-primary italic">visual</span> PARA <br />
                 eventos e artistas
               </h1>
 
-              <p className="mt-4 text-sm md:text-base leading-relaxed text-white/60">
+              <p className="mt-4 max-w-[32rem] text-sm leading-relaxed text-white/60 md:text-base">
                 Do conceito à arte final, criamos identidades visuais marcantes.
               </p>
 
-              <div className="mt-6 flex flex-col sm:flex-row items-center md:items-center justify-center md:justify-start gap-2">
-                <a href="#contact" className="inline-flex items-center justify-center gap-2 h-11 px-6 bg-primary text-white font-bold text-sm uppercase">
+              <div className="mt-6 flex flex-col items-start justify-start gap-2 sm:flex-row md:items-center">
+                <a href="#contact" className="inline-flex h-11 items-center justify-center gap-2 bg-primary px-6 text-sm font-bold uppercase text-white">
                   Orçamento <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
-            
-            <div className="w-[240px] h-[320px] md:w-[260px] md:h-[340px] relative flex-none flex items-center justify-center">
-                <div className="relative w-full h-full">
+
+            <div className="relative mx-auto mt-2 flex h-[300px] w-full max-w-[260px] flex-none items-center justify-center md:mx-0 md:mt-0 md:h-[340px] md:w-[260px]">
+              <div className="relative h-full w-full">
                   {cards.map((asset, index) => {
                     const total = cards.length;
                     let offset = index - activeCardIndex;
@@ -280,7 +279,7 @@ const Index = () => {
           
           <div className="pt-12 md:pt-20">
             <div className="w-20 h-20 mx-auto mb-8 hover:scale-110 transition-transform cursor-pointer">
-              <img src={logoAsset.url} alt="Sant Designer Logo" className="w-full h-full object-contain" />
+              <img src={logoAsset} alt="Logo Sant Designer" className="w-full h-full object-contain" />
             </div>
             <p className="text-[10px] text-white/20 font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase px-4">
               © 2026 SANT DESIGNER. TODOS OS DIREITOS RESERVADOS.
