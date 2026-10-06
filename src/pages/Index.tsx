@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ArrowLeft, ArrowRight, Image as ImageIcon, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StreetCursor from "@/components/StreetCursor";
@@ -147,35 +147,15 @@ const CarouselNavigation = ({ onPrevious, onNext, previousLabel, nextLabel }: Ca
 );
 
 const Index = () => {
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
-  const [heroDeckPhase, setHeroDeckPhase] = useState<"stacked" | "opening" | "open">("stacked");
-  const [isCompactHero, setIsCompactHero] = useState(() => window.matchMedia("(max-width: 1023px)").matches);
+  const heroCarouselRef = useRef<HTMLDivElement>(null);
+  const heroDragRef = useRef<{ pointerId: number; startX: number; scrollLeft: number; captureTarget: HTMLElement; didDrag: boolean } | null>(null);
+  const suppressHeroClickRef = useRef(false);
   const flyerCarouselRef = useRef<HTMLDivElement>(null);
   const flyerDragRef = useRef<{ pointerId: number; startX: number; scrollLeft: number } | null>(null);
   const artisticCarouselRef = useRef<HTMLDivElement>(null);
   const artisticDragRef = useRef<{ pointerId: number; startX: number; scrollLeft: number } | null>(null);
   const illustrationCarouselRef = useRef<HTMLDivElement>(null);
   const illustrationDragRef = useRef<{ pointerId: number; startX: number; scrollLeft: number } | null>(null);
-
-  useEffect(() => {
-    const compactHeroQuery = window.matchMedia("(max-width: 1023px)");
-    const updateCompactHero = () => setIsCompactHero(compactHeroQuery.matches);
-    compactHeroQuery.addEventListener("change", updateCompactHero);
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setHeroDeckPhase("open");
-      return () => compactHeroQuery.removeEventListener("change", updateCompactHero);
-    }
-
-    const openingFrame = window.requestAnimationFrame(() => setHeroDeckPhase("opening"));
-    const finishTimer = window.setTimeout(() => setHeroDeckPhase("open"), 1100);
-
-    return () => {
-      window.cancelAnimationFrame(openingFrame);
-      window.clearTimeout(finishTimer);
-      compactHeroQuery.removeEventListener("change", updateCompactHero);
-    };
-  }, []);
 
   const scrollCarousel = (carousel: HTMLDivElement | null, cardSelector: string, direction: -1 | 1) => {
     if (!carousel) return;
@@ -251,9 +231,9 @@ const Index = () => {
 
 
       {/* Hero Section */}
-      <section id="hero" className="relative z-10 flex items-center overflow-x-hidden py-8 md:py-12 lg:py-16">
+      <section id="hero" className="relative z-10 flex items-center overflow-x-hidden py-12 md:py-14 lg:py-16">
         <div className="mx-auto w-full max-w-[1120px] px-4 md:px-6">
-          <div className="mx-auto grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-14">
+          <div className="mx-auto grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-12">
             <div className="w-full max-w-[620px] flex-none text-left">
               <h1 className="text-[2.4rem] font-normal uppercase leading-[0.96] text-white sm:text-5xl md:text-[3rem] lg:text-[3.8rem]" style={{ fontFamily: 'Anton, sans-serif' }}>
                 COMUNICAÇÃO <br />
@@ -270,69 +250,83 @@ const Index = () => {
                   Orçamento <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </a>
               </div>
-              <HeroPillarCards className="mt-7 hidden w-full grid-cols-3 gap-3 lg:grid" />
             </div>
 
-            <div className="relative mx-auto mt-8 w-full max-w-[420px] md:mt-10 lg:mt-0 lg:max-w-[380px]">
-              <div className="relative mx-auto aspect-[3/4] w-[72vw] max-w-[320px] lg:aspect-auto lg:h-[410px] lg:w-[340px]">
-                <div className="relative h-full w-full">
-                  {cards.map((asset, index) => {
-                    const total = cards.length;
-                    let offset = index - activeCardIndex;
-                    if (offset > total / 2) offset -= total;
-                    if (offset < -total / 2) offset += total;
-                    const isActive = offset === 0;
-                    const absOffset = Math.abs(offset);
-                    const isVisibleCard = isCompactHero ? absOffset <= 1 : absOffset <= 2;
-                    const fanRotation = 3.5;
-                    const fanSpread = isCompactHero ? 7 : 5;
-                    const fanDepth = isCompactHero ? 1.5 : 2;
-                    const fanScaleStep = isCompactHero ? 0.08 : 0.045;
-                    const fannedTransform = `rotate(${offset * fanRotation}deg) translateX(${offset * fanSpread}%) translateY(${absOffset * fanDepth}%) scale(${1 - absOffset * fanScaleStep})`;
-                    return (
-                      <div
-                        key={index}
-                        role="button"
-                        tabIndex={isVisibleCard ? 0 : -1}
-                        aria-hidden={!isVisibleCard}
-                        aria-label={`Ver arte ${asset.title}`}
-                        onClick={() => setActiveCardIndex(index)}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") {
-                            e.preventDefault();
-                            setActiveCardIndex(index);
-                          }
-                        }}
-                        className="group absolute inset-0 h-full w-full overflow-hidden rounded-xl border border-white/10 bg-zinc-900 shadow-[0_18px_44px_rgba(0,0,0,0.55)] cursor-pointer transition-[transform,filter,box-shadow,opacity] duration-700 ease-out hover:brightness-110 hover:shadow-[0_22px_50px_rgba(0,0,0,0.65),0_0_24px_rgba(255,0,0,0.2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none"
-                        style={{
-                          zIndex: 30 - absOffset,
-                          opacity: isVisibleCard ? 1 : 0,
-                          pointerEvents: isVisibleCard ? "auto" : "none",
-                          transform: heroDeckPhase === "stacked" ? "rotate(0deg) translateX(0) translateY(0) scale(0.92)" : fannedTransform,
-                          transformOrigin: 'bottom center',
-                          transitionDelay: heroDeckPhase === "opening" ? `${Math.min(absOffset, 6) * 42}ms` : "0ms",
-                          transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
-                        }}
-                      >
-                        <img 
-                          src={optimizedImageUrl(asset.url)}
-                          alt={`Arte ${asset.title}`} 
-                          loading={isVisibleCard ? "eager" : "lazy"}
-                          fetchPriority={isActive ? "high" : "auto"}
-                          decoding="async"
-                          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none"
-                        />
-                        {!isActive && (
-                          <div className="absolute inset-0 bg-black/40" />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
+            <HeroPillarCards className="hidden w-full grid-cols-3 gap-3 lg:grid" />
+
+            <div className="relative col-span-full w-full max-w-full">
+              <div
+                ref={heroCarouselRef}
+                className="flyer-carousel flex w-full max-w-full flex-row flex-nowrap items-center gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain px-3 py-4 snap-x snap-mandatory scroll-smooth touch-pan-x cursor-grab active:cursor-grabbing md:gap-4"
+                role="region"
+                aria-label="Capas de projetos"
+                tabIndex={0}
+                onPointerDown={(event) => {
+                  if (event.pointerType !== "mouse" || event.button !== 0) return;
+                  suppressHeroClickRef.current = false;
+                  const card = event.target instanceof HTMLElement ? event.target.closest<HTMLElement>("[data-hero-card]") : null;
+                  const captureTarget = card ?? event.currentTarget;
+                  heroDragRef.current = { pointerId: event.pointerId, startX: event.clientX, scrollLeft: event.currentTarget.scrollLeft, captureTarget, didDrag: false };
+                  captureTarget.setPointerCapture(event.pointerId);
+                }}
+                onPointerMove={(event) => {
+                  const drag = heroDragRef.current;
+                  if (!drag || drag.pointerId !== event.pointerId) return;
+                  const deltaX = event.clientX - drag.startX;
+                  if (!drag.didDrag && Math.abs(deltaX) <= 6) return;
+                  drag.didDrag = true;
+                  event.currentTarget.scrollLeft = drag.scrollLeft - deltaX;
+                }}
+                onPointerUp={(event) => {
+                  const drag = heroDragRef.current;
+                  if (!drag || drag.pointerId !== event.pointerId) return;
+                  heroDragRef.current = null;
+                  if (drag.didDrag) {
+                    suppressHeroClickRef.current = true;
+                    window.setTimeout(() => { suppressHeroClickRef.current = false; }, 250);
+                  }
+                  if (drag.captureTarget.hasPointerCapture(event.pointerId)) drag.captureTarget.releasePointerCapture(event.pointerId);
+                }}
+                onPointerCancel={() => {
+                  heroDragRef.current = null;
+                  suppressHeroClickRef.current = false;
+                }}
+              >
+                {cards.map((asset, index) => (
+                  <button
+                    key={asset.url}
+                    type="button"
+                    data-hero-card
+                    aria-label={`Centralizar arte ${asset.title}`}
+                    onClick={(event) => {
+                      if (suppressHeroClickRef.current) {
+                        suppressHeroClickRef.current = false;
+                        return;
+                      }
+                      const carousel = heroCarouselRef.current;
+                      if (!carousel) return;
+                      const carouselRect = carousel.getBoundingClientRect();
+                      const cardRect = event.currentTarget.getBoundingClientRect();
+                      const requestedLeft = carousel.scrollLeft + cardRect.left - carouselRect.left - (carousel.clientWidth - cardRect.width) / 2;
+                      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                      carousel.scrollTo({ left: Math.max(0, Math.min(maxScroll, requestedLeft)), behavior: "smooth" });
+                    }}
+                    className="group relative isolate aspect-[3/4] w-32 flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950 shadow-lg transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 active:scale-95 active:transition-transform active:duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none sm:w-36 md:w-40 lg:basis-[calc((100%_-_4rem)/5)] lg:w-auto"
+                  >
+                    <img
+                      src={optimizedImageUrl(asset.url)}
+                      alt={`Arte ${asset.title}`}
+                      draggable={false}
+                      loading={index < 5 ? "eager" : "lazy"}
+                      decoding="async"
+                      className="h-full w-full object-cover"
+                    />
+                  </button>
+                ))}
               </div>
-
-              <HeroPillarCards className="mt-5 grid w-full grid-cols-1 gap-2 lg:hidden" />
             </div>
+
+            <HeroPillarCards className="grid w-full grid-cols-1 gap-2 lg:hidden" />
           </div>
         </div>
       </section>
